@@ -38,17 +38,17 @@ app.use((req, res, next) => {
 
 // Home 
 app.get('/', (req, res) => {
-    res.send('We on the homepage...')
+    res.render('index')
 }); 
 
-// Movie 
-app.use('/movies', movieCtrl); 
+// // Movie 
+// app.use('/movies', movieCtrl); 
 
-// Service
-app.use('/services', serviceCtrl); 
+// // Service
+// app.use('/services', serviceCtrl); 
 
-// Show 
-app.use('/shows', showCtrl); 
+// // Show 
+// app.use('/shows', showCtrl); 
 
 // --- Server Listener --- // 
 app.listen(PORT, () => {console.log(`Server is listening on ${PORT}...`)})

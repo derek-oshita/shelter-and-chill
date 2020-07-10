@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <h1>New Movie</h1>
+
+        <form action="/movies" method="POST">
+            Name: <input type="text" name="name"/> <br/><br/>
+            Genre: <input type="text" name="genre"/> <br/><br/>
+            Synopsis: <textarea name="synopsis"></textarea> <br/><br/>
+            Cast: <input type="text" name="cast"/> <br/><br/>
+            Director: <input type="text" name="director"/>
+            Service: <input type="text" name="service"/>
+            <button type="submit">Add Movie</button>
+        </form>
+
+
+</body>
+</html>
+<!-- 
+const movieSchema = new mongoose.Schema ({
+    name: {
+        type: String, 
+        required: true, 
+        unique: true
+    }, 
+    genre: {
+        type: String, 
+    }, 
+    synopsis: {
+        type: String, 
+    }, 
+    cast: [{
+        firsName: {
+            type: String
+        }, 
+        lastName: {
+            type:String
+        }
+    }], 
+    director: [{
+        firsName: {
+            type: String
+        }, 
+        lastName: {
+            type:String
+        }
+    }], 
+    upVote: {
+        type: Number
+    }, 
+    downVote: {
+        type: Number
+    }, 
+    service: [{
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: 'Service'
+    }]
+});  -->

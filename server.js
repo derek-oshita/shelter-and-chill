@@ -3,6 +3,17 @@ const app = express();
 const methodOverride = require('method-override'); 
 const PORT = process.env.PORT || 4000; 
 
+// --- Controllers --- // 
+
+// Movie
+const movieCtrl = require('./controllers/movieController'); 
+
+// Service 
+const serviceCtrl = require('./controllers/serviceController'); 
+
+// Show 
+const showCtrl = require('./controllers/showController'); 
+
 // --- View Engine --- // 
 app.set('view engine', 'ejs')
 
@@ -29,6 +40,16 @@ app.use((req, res, next) => {
 app.get('/', (req, res) => {
     res.send('We on the homepage...')
 }); 
+
+// Movie 
+app.use('/movies', movieCtrl); 
+
+// Service
+app.use('/services', serviceCtrl); 
+
+// Show 
+app.use('/shows', showCtrl); 
+
 
 
 // --- Server Listener --- // 

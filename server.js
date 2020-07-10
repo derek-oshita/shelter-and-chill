@@ -41,8 +41,8 @@ app.get('/', (req, res) => {
     res.render('index')
 }); 
 
-// // Movie 
-// app.use('/movies', movieCtrl); 
+// Movie 
+app.use('/movies', movieCtrl); 
 
 // // Service
 // app.use('/services', serviceCtrl); 

@@ -16,6 +16,13 @@ router.get('/', (req, res) => {
     })
 }); 
 
+// New Movie Route
+router.get('/new', (req, res) => {
+    res.render('movie/new')
+}); 
+
+
+
 // --- Export Router ---// 
 
 module.exports = router; 

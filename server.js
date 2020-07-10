@@ -50,5 +50,10 @@ app.get('/', (req, res) => {
 // // Show 
 // app.use('/shows', showCtrl); 
 
+// 404 Not Found
+app.get('*', (req, res) => {
+    res.send('<h1>404 Page Not Found</h1>')
+}); 
+
 // --- Server Listener --- // 
 app.listen(PORT, () => {console.log(`Server is listening on ${PORT}...`)})

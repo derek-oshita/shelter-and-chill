@@ -25,5 +25,11 @@ app.use((req, res, next) => {
 
 // --- Routes --- // 
 
+// Home 
+app.get('/', (req, res) => {
+    res.send('We on the homepage...')
+}); 
+
+
 // --- Server Listener --- // 
 app.listen(PORT, () => {console.log(`Server is listening on ${PORT}...`)})

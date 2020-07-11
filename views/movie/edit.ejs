@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head', {title: ' - New Movies'}) %>
+  <body>
+    <%- include('../partials/header', {h1: 'Movies new page'}) %>
+   
+    <form action="/models/Movie.js" method="POST">
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title"/>
+
+        <label for="genre">Genre</label>
+        <input type="text" id="genre" name="genre"/>
+
+        <label for="cast">Cast</label>
+        <input type="text" id="cast" name="cast" value="<%= article.title %>"/>
+
+        <label for="director">Director</label>
+        <input type="text" id="director" name="director" value="<%= article.title %>"/>
+
+        <label for="upvote">Upvote</label>
+        <input type="number" id="upvote" name="upvote" value="<%= article.title %>"/>
+
+        <label for="downvote">Downvote</label>
+        <input type="number" id="downvote" name="downvote" value="<%= article.title %>"/>
+
+        <label for="service">Service</label>
+        <select name="serviceId" id="service">
+            <% service.forEach(service => { %>
+                <option value="<%= service._id %>"
+                  <% if(service._id.toString() === movieService._id.toString()){ %>
+                        selected
+                    <% } %>
+                    ><%= service.name %></option>
+              <% }) %>
+        </select>
+        <!-- movieService and service passed from movie controller -->
+        <label for="imgurl">Image Url</label>
+        <input type="text" id="imgurl" name="imgurl" value="<%= article.title %>"/>
+
+        <label for="synopsis">Synopsis</label>
+        <input type="text" id="synopsis" name="synopsis" value="<%= article.title %>"/>
+        
+        <button type="submit">Save</button>
+    </form>
+
+    <%- include('../partials/footer') %>
+  </body>
+</html>

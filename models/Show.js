@@ -27,10 +27,10 @@ const showSchema = new mongoose.Schema ({
     downVote: {
         type: Number
     }, 
-    service: [{
-        type: mongoose.Schema.Types.ObjectId, 
-        ref: 'Service'
-    }], 
+    // service: [{
+    //     type: mongoose.Schema.Types.ObjectId, 
+    //     ref: 'Service'
+    // }], 
     imgUrl: {
         type:String
     }

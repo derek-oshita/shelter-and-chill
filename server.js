@@ -47,8 +47,8 @@ app.use('/movies', movieCtrl);
 // // Service
 // app.use('/services', serviceCtrl); 
 
-// // Show 
-// app.use('/shows', showCtrl); 
+// Show 
+app.use('/shows', showCtrl); 
 
 // 404 Not Found
 app.get('*', (req, res) => {

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shows Index</title>
+</head>
+<body>
+    <h1>Shows Index</h1>
+
+    <main>
+        <% show.forEach(show => { %>
+          <h4>
+            <a href="/Shows/<%= show._id %>">
+              <%= show.name %>
+            </a>
+          </h4>
+        <% }) %>
+      </main>
+    
+</body>
+</html>

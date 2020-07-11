@@ -10,8 +10,8 @@ const router = express.Router();
 router.get('/', (req, res) => {
     db.Show.find({}, (err, allShows) => {
         if (err) return console.log(err); 
-        res.render('shows/index', {
-            shows: allShows
+        res.render('show/index', {
+            show: allShows
         })
     })
 }); 

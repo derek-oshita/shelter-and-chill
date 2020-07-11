@@ -64,7 +64,13 @@ router.put('/:id', (req, res) => {
      )
 }); 
 
-
+// Destroy Movie 
+router.delete('/:id', (req, res) => {
+    db.Movie.findByIdAndDelete(req.params.id, (err, movie) => {
+        if (err) return console.log(err)
+        res.redirect('/movies')
+    })
+}); 
 
 // --- Export Router ---// 
 

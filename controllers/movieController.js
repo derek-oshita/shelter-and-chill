@@ -30,6 +30,18 @@ router.post('/', (req, res) => {
     })
 }); 
 
+// Show Movie 
+router.get('/:id', (req, res) => {
+    db.Movie.findById(req.params.id, (err, movie) => {
+        if (err) return console.log(err)
+        res.render('movie/show', {
+            movie: movie
+        })
+    })
+}); 
+
+// 
+
 
 
 // --- Export Router ---// 

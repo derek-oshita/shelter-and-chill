@@ -7,6 +7,16 @@
 </head>
 <body>
     <h1>Movies Index</h1>
+
+    <main>
+        <% movies.forEach(movie => { %>
+          <h4>
+            <a href="/movies/<%= movie._id %>">
+              <%= movie.name %>
+            </a>
+          </h4>
+        <% }) %>
+      </main>
     
 </body>
 </html>

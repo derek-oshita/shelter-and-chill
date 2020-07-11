@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('../partials/head', {title: ' - New Show'}) %>
+    <link rel="stylesheet" href="/styles/style.css"> 
+
+  <body>
+    <%- include('../partials/header') %>
+   
+    <form action="/shows" method="POST">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name"/>
+
+        <label for="genre">Genre</label>
+        <input type="text" id="genre" name="genre"/>
+
+        <label for="cast">Cast</label>
+        <input type="text" id="cast" name="cast"/>
+
+        <label for="director">Director</label>
+        <input type="text" id="director" name="director"/>
+
+        <label for="upvote">Upvote</label>
+        <input type="number" id="upvote" name="upvote"/>
+
+        <label for="downvote">Downvote</label>
+        <input type="number" id="downvote" name="downvote"/>
+
+         <label for="service">Service</label>
+        <select name="serviceId" id="service">
+        </select>
+        
+        <label for="imgurl">Image Url</label>
+        <input type="text" id="imgurl" name="imgurl"/>
+
+        <label for="synopsis">Synopsis</label>
+        <input type="text" id="synopsis" name="synopsis"/>
+        
+        <button type="submit">Save</button>
+    </form>
+
+    <%- include('../partials/footer') %>
+  </body>
+</html>

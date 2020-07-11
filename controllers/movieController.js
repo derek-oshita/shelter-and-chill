@@ -57,7 +57,7 @@ router.put('/:id', (req, res) => {
         req.params.id, 
         req.body, 
         {new: true},
-        (err, user) => {
+        (err, movie) => {
             if(err) return console.log(err); 
             res.redirect('/movies')
         }

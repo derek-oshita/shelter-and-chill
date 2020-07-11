@@ -15,12 +15,12 @@ const serviceCtrl = require('./controllers/serviceController');
 const showCtrl = require('./controllers/showController'); 
 
 // --- View Engine --- // 
-app.set('view engine', 'ejs')
+app.set('view engine', 'ejs'); 
 
 // --- Middleware --- // 
 
 // Method Override
-app.use(methodOverride('__method')); 
+app.use(methodOverride('_method')); 
 
 // Serve Static Assets (Front End JavaScript, CSS, Images, etc)
 app.use(express.static(`${__dirname}/public`));
@@ -47,8 +47,8 @@ app.use('/movies', movieCtrl);
 // // Service
 // app.use('/services', serviceCtrl); 
 
-// // Show 
-// app.use('/shows', showCtrl); 
+// Show 
+app.use('/shows', showCtrl); 
 
 // 404 Not Found
 app.get('*', (req, res) => {

@@ -7,7 +7,7 @@ const movieSchema = new mongoose.Schema ({
     name: {
         type: String, 
         required: true, 
-        unique: true
+        // unique: true
     }, 
     genre: {
         type: String, 
@@ -15,32 +15,25 @@ const movieSchema = new mongoose.Schema ({
     synopsis: {
         type: String, 
     }, 
-    cast: [{
-        firsName: {
-            type: String
-        }, 
-        lastName: {
-            type:String
-        }
-    }], 
-    director: [{
-        firsName: {
-            type: String
-        }, 
-        lastName: {
-            type:String
-        }
-    }], 
+    cast: {
+        type: String
+    }, 
+    director: {
+        type: String
+    }, 
     upVote: {
         type: Number
     }, 
     downVote: {
         type: Number
     }, 
-    service: [{
-        type: mongoose.Schema.Types.ObjectId, 
-        ref: 'Service'
-    }]
+    // service: [{
+    //     type: mongoose.Schema.Types.ObjectId, 
+    //     ref: 'Service'
+    // }], 
+    imgUrl: {
+        type:String
+    }
 }); 
 
 // --- Model --- // 

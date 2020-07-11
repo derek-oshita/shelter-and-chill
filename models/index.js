@@ -15,5 +15,5 @@ mongoose.connect(MONGODB_URI, {
 module.exports = {
     Movie: require('./Movie'), 
     Show: require('./Show'), 
-    // Service: require('./Service')
+    Service: require('./Service')
 }; 

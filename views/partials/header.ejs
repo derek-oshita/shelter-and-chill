@@ -1,7 +1,29 @@
 <header>
-    <nav>
-        <div id="logo">Shelter and Chill</div>
-        <h1><%= h1 %></h1>
-		<div id="menu">[]</div>
+    <!-- Logo -->
+    <div id="logo-container">
+        <a href="/">
+            <h1 id="logo">Shelter & Chill</h1>
+        </a>
+    </div>
+    <!-- Dropdown Menu by Bootstrap CDN-->
+    <nav id="nav-container">
+        <div class="btn-group">
+            <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <!-- Dropdown Menu Icon -->
+                <img src="https://img.icons8.com/cotton/64/000000/menu.png"/>
+            </button>
+            <!-- Dropdown Options -->
+            <div class="dropdown-menu">
+              <ul>
+                <a class="menu-item" href="/"><li>Home</li></a>
+                <a class="menu-item" href="/movies"><li>Movies</li></a>
+                <a class="menu-item" href="/shows"><li>Shows</li></a>
+                <a class="menu-item" href="/services"><li>Streaming Services</li></a>
+                <!-- Needs controller views for add favs and about usL -->
+                <a class="menu-item" href=""><li>Add Your Favorites</li></a>
+                <a class="menu-item" href=""><li>About Us</li></a>
+              </ul>
+            </div>
+          </div>
 	</nav>
 </header>

@@ -20,8 +20,7 @@ const serviceSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId, 
         ref: 'Show'
     }],
-
-})
+}); 
 
 //--------------------------/Model/--------------------------//
 const Service = mongoose.model('Service', serviceSchema);

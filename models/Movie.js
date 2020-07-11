@@ -7,7 +7,7 @@ const movieSchema = new mongoose.Schema ({
     name: {
         type: String, 
         required: true, 
-        // unique: true
+        unique: true
     }, 
     genre: {
         type: String, 
@@ -27,10 +27,10 @@ const movieSchema = new mongoose.Schema ({
     downVote: {
         type: Number
     }, 
-    // service: [{
-    //     type: mongoose.Schema.Types.ObjectId, 
-    //     ref: 'Service'
-    // }], 
+    service: [{
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: 'Service'
+    }], 
     imgUrl: {
         type:String
     }

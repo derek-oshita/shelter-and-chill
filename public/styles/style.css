@@ -15,7 +15,7 @@ header {
 
 #logo {
     color: white; 
-
+    margin: 0px 0px 0px 15px; 
 }
 
 #logo-container {
@@ -30,6 +30,14 @@ header {
     display: flex; 
     justify-content: flex-end;
     align-items: center;
+}
+
+.btn-group {
+    margin: 0px 15px 0px 0px; 
+}
+
+.menu-item {
+    text-align: center;
 }
 
 /* Unordered List */

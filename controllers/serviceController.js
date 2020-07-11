@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
     db.Service.find({}, (err, allServices) => {
         if (err) return console.log(err); 
         res.render('service/index', {
-            service: allServices
+            service: allServices,
         })
     })
 }); 
@@ -30,18 +30,42 @@ router.post('/', (req, res) =>{
         console.log('New Service =', newService);
         res.redirect('/Service');
     })
-})
+});
 
 //#*#*#*#*#* SERVICE SHOW *#*#*#*#*#
 router.get('/:id', (req, res) => {
-    db.Service.findById(req.params.id);
+    db.Service.findById(req.params.id, (err, service) => {
+        if (err) return console.log(err);
 
-})
+        res.render('service/show'),{
+            service: service,
+        }
+    })
+});
 
 //#*#*#*#*#* EDIT SERVICE *#*#*#*#*#
-
+router.get('/:id/edit', (req, res) => {
+    db.Service.findById(req.params.id, (err, foundService) => {
+        if (err) return console.log(err);
+        res.render('service/edit', {
+            service: foundService,
+        })
+    })
+});
 
 //#*#*#*#*#* UPDATE SERVICE *#*#*#*#*#
+router.put('/:id', (req, res) => {
+    console.log('service to update =', req.body);
+    db.Service.findByIdAndUpdate(
+        req.params.id,
+        req.body,
+        {new: true},
+        (err, updatedService) => {
+            if (err) return console.log(err);
+            res.redirect('/service');
+        }
+    )
+});
 
 
 //#*#*#*#*#* DELETE SERVICE *#*#*#*#*#

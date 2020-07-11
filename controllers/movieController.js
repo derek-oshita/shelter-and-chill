@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
     db.Movie.find({}, (err, allMovies) => {
         if (err) return console.log(err); 
         res.render('movie/index', {
-            movies: allMovies
+            movie: allMovies
         })
     })
 }); 

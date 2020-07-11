@@ -15,22 +15,12 @@ const movieSchema = new mongoose.Schema ({
     synopsis: {
         type: String, 
     }, 
-    cast: [{
-        firsName: {
-            type: String
-        }, 
-        lastName: {
-            type:String
-        }
-    }], 
-    director: [{
-        firsName: {
-            type: String
-        }, 
-        lastName: {
-            type:String
-        }
-    }], 
+    cast: {
+        type: String
+    }, 
+    director: {
+        type: String
+    }, 
     upVote: {
         type: Number
     }, 

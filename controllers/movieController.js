@@ -21,7 +21,14 @@ router.get('/new', (req, res) => {
     res.render('movie/new')
 }); 
 
-
+// Create Movie 
+router.post('/', (req, res) => {
+    console.log(req.body) 
+    db.Movie.create(req.body, (err, newMovie) => {
+        if (err) return console.log(err); 
+        res.redirect('/movies')
+    })
+}); 
 
 
 

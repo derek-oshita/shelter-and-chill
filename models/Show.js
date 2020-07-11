@@ -10,27 +10,17 @@ const showSchema = new mongoose.Schema ({
         unique: true
     }, 
     genre: {
-        type: String, 
+        type: String
     }, 
     synopsis: {
-        type: String, 
+        type: String
     }, 
-    cast: [{
-        firsName: {
-            type: String
-        }, 
-        lastName: {
-            type:String
-        }
-    }], 
-    director: [{
-        firsName: {
-            type: String
-        }, 
-        lastName: {
-            type:String
-        }
-    }], 
+    cast: {
+        type: String
+    }, 
+    director: {
+        type: String
+    }, 
     upVote: {
         type: Number
     }, 

@@ -4,15 +4,24 @@
   <body>
     <%- include('../partials/header') %>
     <main>
+      <!-- Name -->
       <div><strong><%= movie.name %></strong></div>
       <div>
+        <!-- Movie Details -->
         <div><%= (`Genre: ${movie.genre}`) %></div>
         <div><%= (`Cast: ${movie.cast}`) %></div>
         <div><%= (`Director: ${movie.director}`) %></div>
-       <!-- SERVICES -->
         <div><%= (`Up Vote: ${movie.upVote}`) %></div>
         <div><%= (`Down Vote: ${movie.downVote}`) %></div>
         <div><%= (`Synopsis: ${movie.synopsis}`) %></div>
+        <!-- Movie Streaming Services -->
+        <div> 
+          <% movie.service.forEach((movie) => { %>
+            <ul>
+              <li>Available on: <%= service.serviceId.name %></li>
+            </ul>
+          <%})%>
+        </div>
         <!-- Edit Button -->
         <a href="/movies/<%= movie._id %>/edit">
           <button>Edit Movie</button>

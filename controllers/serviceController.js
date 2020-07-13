@@ -26,9 +26,8 @@ router.post('/', (req, res) =>{
     console.log('Request body =', req.body);
     db.Service.create(req.body, (err, newService) => {
         if (err) return console.log(err);
-
         console.log('New Service =', newService);
-        res.redirect('/service');
+        res.redirect('/services');
     })
 });
 
@@ -36,7 +35,6 @@ router.post('/', (req, res) =>{
 router.get('/:id', (req, res) => {
     db.Service.findById(req.params.id, (err, service) => {
         if (err) return console.log(err);
-
         res.render('service/show'),{
             service: service,
         }
@@ -62,15 +60,20 @@ router.put('/:id', (req, res) => {
         {new: true},
         (err, updatedService) => {
             if (err) return console.log(err);
-            res.redirect('/service');
+            res.redirect('/services');
         }
     )
 });
 
 
 //#*#*#*#*#* DELETE SERVICE *#*#*#*#*#
-
-
+router.delete('/:id', (req, res) => {
+    db.Service.findByIdAndDelete(req.params.id, (err, service) => {
+        console.log(service)
+        if (err) return console.log(err)
+        res.redirect('/services')
+    })
+}); 
 
 //--------------------------/EXPORT ROUTER/--------------------------//
 module.exports = router; 

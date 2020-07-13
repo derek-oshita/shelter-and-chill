@@ -16,11 +16,8 @@
         <div><%= (`Synopsis: ${movie.synopsis}`) %></div>
         <!-- Movie Streaming Services -->
         <div> 
-          <% movie.service.forEach((movie) => { %>
-            <ul>
-              <li>Available on: <%= service.serviceId.name %></li>
-            </ul>
-          <%})%>
+          <!-- This works for first position -->
+          Available On: <%= movie.service[0].name %>
         </div>
         <!-- Edit Button -->
         <a href="/movies/<%= movie._id %>/edit">

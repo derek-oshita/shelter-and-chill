@@ -34,11 +34,19 @@ app.use((req, res, next) => {
     next(); 
 }); 
 
-// --- Routes --- // 
+//--------------------------/ROUTES/--------------------------//
 
 // Home 
 app.get('/', (req, res) => {
     res.render('index')
+}); 
+// About us 
+app.get('/about', (req, res) => {
+    res.render('about/index')
+}); 
+// Add favorites 
+app.get('/add', (req, res) => {
+    res.render('add/index')
 }); 
 
 // Movie 

@@ -25,14 +25,6 @@
 
         <!-- SERVICE EDIT GOES HERE -->
 
-        <% services.forEach(service => { %>
-
-          <label for="<%= service._id%>"><%= service.name %> </label>
-
-          <input type="checkbox" name="service" id="<%= service._id%>" value="<%= service._id %> ">
-          <!-- Name matches property in model service = service -->
-        <% }) %> 
-
         <!-- movieService and service passed from movie controller -->
         <label for="imgurl">Image Url</label>
         <input type="text" id="imgurl" name="imgUrl" value="<%= movie.imgUrl %>"/>

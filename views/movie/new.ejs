@@ -19,13 +19,16 @@
         <label for="director">Director</label>
         <input type="text" id="director" name="director"/>
 
-        <!-- Uncomment this later -->
-         <!-- <label for="service">Service</label>
-        <select name="serviceId" id="service">
-        </select> -->
-        <label for="service">Service</label>
-        <input type="text" id="service" name="serviceId"/>
+        <!-- Edit Service Goes Here -->
 
+
+        <% service.forEach(service => { %>
+
+          <label for="<%= service._id%>"><%= service.name %> </label>
+
+          <input type="checkbox" name="service" id="<%= service._id%>" value="<%= service._id %> ">
+          <!-- Name matches property in model service = service -->
+        <% }) %> 
         
         <label for="imgurl">Image Url</label>
         <input type="text" id="imgurl" name="imgurl"/>

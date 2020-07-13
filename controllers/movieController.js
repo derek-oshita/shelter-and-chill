@@ -18,8 +18,13 @@ router.get('/', (req, res) => {
 
 // New Movie
 router.get('/new', (req, res) => {
-    res.render('movie/new')
-}); 
+    db.Service.find({}, (err, allServices) => {
+        if (err) return console.log(err); 
+        res.render('movie/new', {
+            service: allServices
+        })
+    })
+})
 
 // Create Movie 
 router.post('/', (req, res) => {
@@ -40,75 +45,75 @@ router.get('/:id', (req, res) => {
     })
 }); 
 
-// Working Edit Movie
-router.get('/:id/edit', (req, res) => {
-    db.Movie.findById(req.params.id, (err, movie) => {
-        if (err) return console.log(err)
-        res.render('movie/edit', {
-            movie: movie
-        })
-    })
-}); 
-
-// Working Update Movie 
-router.put('/:id', (req, res) => {
-    console.log('Updated: ', req.body)
-    db.Movie.findByIdAndUpdate(
-        req.params.id, 
-        req.body, 
-        {new: true},
-        (err, movie) => {
-            if(err) return console.log(err); 
-            res.redirect('/movies')
-        }
-     )
-}); 
-
-// // Edit Movie (In progress)
+// // Working Edit Movie
 // router.get('/:id/edit', (req, res) => {
-//     db.Service.find({}, (err, allServices) => {
-//         db.Service.findOne({'movie': req.params.id})
-//         .populate({
-//             path: 'movie', 
-//             match: {_id: req.params.id}
-//         })
-//         .exec((err, foundService) => {
-//             res.render('./movie/edit', {
-//                 movie: foundService.movie[0], 
-//                 service: allServices, 
-//                 serviceProvider: foundService
-//             })
+//     db.Movie.findById(req.params.id, (err, movie) => {
+//         if (err) return console.log(err)
+//         res.render('movie/edit', {
+//             movie: movie
 //         })
 //     })
 // }); 
 
-// // Movie Update (In progress)
-// router.put('/:id/', (req, res) => {
+// // Working Update Movie 
+// router.put('/:id', (req, res) => {
+//     console.log('Updated: ', req.body)
 //     db.Movie.findByIdAndUpdate(
 //         req.params.id, 
 //         req.body, 
-//         {new: true}, 
-//         (err, updatedMovie) => {
-//             if (err) return console.log(err); 
-//             db.Service.findOne({'movie': req.params.id}, (err, foundService) => {
-//                 if (foundService._id.toString() !== req.body.serviceId){
-//                     foundService.movie.remove(req.params.id); 
-//                     foundService.save((err, savedService) => {
-//                         db.Service.findById(req.body.serviceId, (err, newService) => {
-//                             newService.movie.push(updatedMovie); 
-//                             newService.save((err, savedNewService) => {
-//                                 res.redirect(`/movies/${req.params.id}`)
-//                             })
-//                         })
-//                     })
-//                 } else {
-//                     res.redirect(`/movies/${req.params.id}`); 
-//                 }
-//                 // }
-//             })
+//         {new: true},
+//         (err, movie) => {
+//             if(err) return console.log(err); 
+//             res.redirect('/movies')
 //         }
-//     )
+//      )
 // }); 
+
+// Edit Movie (In progress)
+router.get('/:id/edit', (req, res) => {
+    db.Service.find({}, (err, allServices) => {
+        db.Service.findOne({'movie': req.params.id})
+        .populate({
+            path: 'movie', 
+            match: {_id: req.params.id}
+        })
+        .exec((err, foundService) => {
+            res.render('./movie/edit', {
+                movie: foundService.movie[0], 
+                service: allServices, 
+                serviceProvider: foundService
+            })
+        })
+    })
+}); 
+
+// Movie Update (In progress)
+router.put('/:id/', (req, res) => {
+    db.Movie.findByIdAndUpdate(
+        req.params.id, 
+        req.body, 
+        {new: true}, 
+        (err, updatedMovie) => {
+            if (err) return console.log(err); 
+            db.Service.findOne({'movie': req.params.id}, (err, foundService) => {
+                if (foundService._id.toString() !== req.body.serviceId){
+                    foundService.movie.remove(req.params.id); 
+                    foundService.save((err, savedService) => {
+                        db.Service.findById(req.body.serviceId, (err, newService) => {
+                            newService.movie.push(updatedMovie); 
+                            newService.save((err, savedNewService) => {
+                                res.redirect(`/movies/${req.params.id}`)
+                            })
+                        })
+                    })
+                } else {
+                    res.redirect(`/movies/${req.params.id}`); 
+                }
+                // }
+            })
+        }
+    )
+}); 
 
 // Destroy Movie 
 router.delete('/:id', (req, res) => {

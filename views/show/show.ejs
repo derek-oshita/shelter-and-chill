@@ -2,11 +2,23 @@
 <html lang="en">
   <%- include('../partials/head', {title: ` - ${show.name}`}) %>
   <body>
-    <%- include('../partials/header', {h1: `Show: ${show.name}`}) %>
+    <%- include('../partials/header')%>
     <main>
-		<p>
-            Brownie cake toffee croissant jelly croissant topping. Icing halvah fruitcake cheesecake tiramisu. Wafer candy gummi bears sugar plum biscuit jujubes. Cake pudding jelly beans donut donut gummies soufflé apple pie gingerbread. Pudding candy cupcake ice cream cookie sweet. Gummies marshmallow chocolate bar marzipan halvah caramels donut cake. Tootsie roll macaroon wafer toffee muffin gummi bears caramels pie pie. Bear claw chocolate cake chocolate halvah apple pie fruitcake tootsie roll sesame snaps topping. Ice cream fruitcake tootsie roll pie pudding. Oat cake liquorice apple pie candy pastry sweet roll croissant macaroon fruitcake. Pudding soufflé dessert topping gummies. Candy soufflé oat cake bonbon. Jelly beans caramels chocolate oat cake croissant soufflé bonbon chocolate bar danish.
-        </p>
+      <div><strong><%= show.name %></strong></div>
+      <div>
+        <div><%= (`Genre: ${show.genre}`) %></div>
+        <div><%= (`Cast: ${show.cast}`) %></div>
+        <div><%= (`Director: ${show.director}`) %></div>
+       <!-- SERVICES -->
+        <div><%= (`Up Vote: ${show.upVote}`) %></div>
+        <div><%= (`Down Vote: ${show.downVote}`) %></div>
+        <div><%= (`Synopsis: ${show.synopsis}`) %></div>
+        
+        <a href="/shows/<%= show._id %>/edit">
+          <button>Edit Show</button>
+        </a>
+
+      </div>
     </main>
     <%- include('../partials/footer') %>
   </body>

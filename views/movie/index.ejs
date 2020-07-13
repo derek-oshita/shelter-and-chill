@@ -9,11 +9,11 @@
         </p>
     </div>
     <div>
-        <ul>
-         <% movie.forEach ((movie) => { %>
-          <li><%= movie.name %> </li>
-          <%})%>
-        </ul>
+      <% movie.forEach((movie) => { %>
+        <a href="/movies/<%= movie._id %>">
+          <h4><%= movie.name %></h4>
+        </a>
+      <% }) %>
     </div>
 
     <%- include('../partials/footer') %>

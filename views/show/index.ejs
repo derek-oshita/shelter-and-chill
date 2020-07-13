@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head', {title: ' - Shows'}) %>
+  <body>
+    <%- include('../partials/header') %>
+    <div>
+        <p>
+            Gummies chupa chups brownie. Halvah sweet brownie. Cotton candy chocolate bar cake. Chocolate cake wafer sweet roll dessert sugar plum dragée chocolate. Candy liquorice caramels croissant powder bear claw croissant. Donut gummies cotton candy toffee chupa chups gummies gingerbread sesame snaps. Tootsie roll macaroon gummi bears. Croissant marshmallow candy cake gingerbread gummi bears soufflé croissant. Ice cream gummi bears halvah wafer marshmallow biscuit donut. Pie bonbon sweet roll jelly-o. Sweet roll candy canes dessert jelly jelly danish wafer fruitcake. Croissant oat cake tart tiramisu croissant tiramisu macaroon carrot cake.
+        </p>
+    </div>
+    <div>
+        <ul>
+         <% show.forEach ((show) => { %>
+          <li><%= show.name %> </li>
+          <%})%>
+        </ul>
+    </div>
+
+    <%- include('../partials/footer') %>
+  </body>
+</html>

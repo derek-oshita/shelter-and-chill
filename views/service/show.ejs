@@ -20,7 +20,12 @@
       <form style="display: inline;" action="/services/<%=service._id%>?_method=DELETE" method="POST">
         <button>Delete</button>
       </form>
+      <!-- Edit Button -->
+      <a href="/services/<%=service._id%>/Edit">
+        <button>Edit</button>
+      </a>
     </main>
+    <!-- Footer -->
     <%- include('../partials/footer') %>
   </body>
 </html>

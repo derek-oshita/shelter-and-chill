@@ -1,13 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('../partials/head', {title: ` - ${service.name}`}) %>
+  <!-- , {title: ` - ${service.name}`} -->
+  <%- include('../partials/head') %>
   <body>
-    <%- include('../partials/header', {h1: `Service: ${service.name}`}) %>
+    <!-- , {h1: `Service: ${service.name}`} -->
+    <%- include('../partials/header') %>
     <main>
-		<p>
-            Donut cake liquorice. Croissant croissant toffee muffin jelly beans biscuit sweet. Danish chocolate bar ice cream apple pie gingerbread oat cake fruitcake bear claw. Bonbon sweet roll topping danish gummi bears tiramisu pastry. Donut chocolate bar soufflé lollipop candy jelly-o tootsie roll gummies chupa chups. Jelly muffin cheesecake halvah cake sweet roll jujubes jelly chocolate. Cupcake liquorice donut. Carrot cake fruitcake sweet gingerbread pastry lemon drops sesame snaps chocolate lemon drops. Oat cake gingerbread caramels cookie jelly beans tart chocolate bar. Apple pie icing powder candy. Sweet gingerbread tart. Dessert tiramisu chocolate chocolate bar dessert marzipan jelly beans dessert macaroon. Sweet chocolate cake brownie chocolate bar.
-        </p>
+      <!-- Name -->
+      <h2>
+        <%= service.name %>
+      </h2>
+      <!-- Price -->
+      <ul>
+        <li>
+          <%= service.price %>
+        </li>
+      </ul>
+      <!-- Delete Button (for our convenience)-->
+      <form style="display: inline;" action="/services/<%=service._id%>?_method=DELETE" method="POST">
+        <button>Delete</button>
+      </form>
+      <!-- Edit Button -->
+      <a href="/services/<%=service._id%>/Edit">
+        <button>Edit</button>
+      </a>
     </main>
+    <!-- Footer -->
     <%- include('../partials/footer') %>
   </body>
 </html>

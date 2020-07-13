@@ -11,7 +11,7 @@
     <div>
         <ul>
          <% service.forEach ((service) => { %>
-          <li><%= service.name %> </li>
+          <li><a href="/services/<%=service.id%>"><%= service.name %></a></li>
           <%})%>
         </ul>
     </div>

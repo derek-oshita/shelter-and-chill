@@ -76,19 +76,19 @@ router.get('/:id/edit', (req, res) => {
     })
 }); 
 
-// // Working Update Movie 
-// router.put('/:id', (req, res) => {
-//     console.log('Updated: ', req.body)
-//     db.Movie.findByIdAndUpdate(
-//         req.params.id, 
-//         req.body, 
-//         {new: true},
-//         (err, movie) => {
-//             if(err) return console.log(err); 
-//             res.redirect('/movies')
-//         }
-//      )
-// }); 
+// Working Update Movie 
+router.put('/:id', (req, res) => {
+    console.log('Updated: ', req.body)
+    db.Movie.findByIdAndUpdate(
+        req.params.id, 
+        req.body, 
+        {new: true},
+        (err, movie) => {
+            if(err) return console.log(err); 
+            res.redirect('/movies')
+        }
+     )
+}); 
 
 // // Edit Movie (In progress)
 // router.get('/:id/edit', (req, res) => {

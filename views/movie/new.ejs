@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <%- include('../partials/head', {title: ' - New Movie'}) %>
+  <%- include('../partials/head', {title: ' - New Movie'}) %>
     <link rel="stylesheet" href="/styles/style.css"> 
-
   <body>
     <%- include('../partials/header') %>
    
@@ -20,15 +19,13 @@
         <label for="director">Director</label>
         <input type="text" id="director" name="director"/>
 
-        <label for="upvote">Upvote</label>
-        <input type="number" id="upvote" name="upvote"/>
-
-        <label for="downvote">Downvote</label>
-        <input type="number" id="downvote" name="downvote"/>
-
-         <label for="service">Service</label>
+        <!-- Uncomment this later -->
+         <!-- <label for="service">Service</label>
         <select name="serviceId" id="service">
-        </select>
+        </select> -->
+        <label for="service">Service</label>
+        <input type="text" id="service" name="serviceId"/>
+
         
         <label for="imgurl">Image Url</label>
         <input type="text" id="imgurl" name="imgurl"/>
@@ -38,7 +35,6 @@
         
         <button type="submit">Save</button>
     </form>
-
     <%- include('../partials/footer') %>
   </body>
 </html>

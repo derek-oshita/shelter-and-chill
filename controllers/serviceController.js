@@ -35,9 +35,9 @@ router.post('/', (req, res) =>{
 router.get('/:id', (req, res) => {
     db.Service.findById(req.params.id, (err, service) => {
         if (err) return console.log(err);
-        res.render('service/show'),{
+        res.render(('service/show'),{
             service: service,
-        }
+        })
     })
 });
 

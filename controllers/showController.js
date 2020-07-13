@@ -18,14 +18,21 @@ router.get('/', (req, res) => {
 
 // New Show
 router.get('/new', (req, res) => {
-    res.render('show/new')
+    db.Service.find({}, (err, allServices) => {
+        if (err)return console.log(err);
+        
+        res.render('show/new', {
+            services: allServices
+        })
+    })
 }); 
 
 // Create Show 
 router.post('/', (req, res) => {
     console.log(req.body) 
     db.Show.create(req.body, (err, newShow) => {
-        if (err) return console.log(err); 
+        if (err) return console.log(err);
+        //Update services shows array with new id from new show ( use id from newShow object) 
         res.redirect('/shows')
     })
 }); 

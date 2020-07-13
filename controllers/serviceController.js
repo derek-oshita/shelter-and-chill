@@ -28,7 +28,7 @@ router.post('/', (req, res) =>{
         if (err) return console.log(err);
 
         console.log('New Service =', newService);
-        res.redirect('/Service');
+        res.redirect('/service');
     })
 });
 

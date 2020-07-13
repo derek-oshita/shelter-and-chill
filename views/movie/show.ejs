@@ -2,11 +2,26 @@
 <html lang="en">
   <%- include('../partials/head', {title: ` - ${movie.name}`}) %>
   <body>
-    <%- include('../partials/header', {h1: `Movie: ${movie.name}`}) %>
+    <%- include('../partials/header') %>
     <main>
-		    <p>
-            Bear claw chupa chups cookie tootsie roll caramels ice cream. Croissant gummi bears soufflé caramels pastry bonbon gummi bears bear claw gummies. Powder danish ice cream muffin pudding jelly beans powder oat cake gummies. Chupa chups chocolate cake apple pie croissant liquorice gummi bears gingerbread wafer. Wafer brownie oat cake carrot cake candy canes cake icing chupa chups gummies. Gummi bears jelly-o marzipan halvah gingerbread muffin jujubes. Jelly beans sweet donut cookie. Bear claw dessert biscuit chupa chups ice cream tiramisu pudding jelly beans lemon drops. Carrot cake donut chocolate.
-        </p>
+      <div><strong><%= movie.name %></strong></div>
+      <div>
+        <div><%= (`Genre: ${movie.genre}`) %></div>
+        <div><%= (`Cast: ${movie.cast}`) %></div>
+        <div><%= (`Director: ${movie.director}`) %></div>
+       <!-- SERVICES -->
+        <div><%= (`Up Vote: ${movie.upVote}`) %></div>
+        <div><%= (`Down Vote: ${movie.downVote}`) %></div>
+        <div><%= (`Synopsis: ${movie.synopsis}`) %></div>
+        <!-- Edit Button -->
+        <a href="/movies/<%= movie._id %>/edit">
+          <button>Edit Movie</button>
+        </a>
+        <!-- Delete Button -->
+        <form style="display: inline;" action="/movies/<%= movie._id%>?_method=DELETE" method="POST">
+          <button type="submit">Delete Movie</button>
+        </form>
+      </div>
     </main>
     <%- include('../partials/footer') %>
   </body>

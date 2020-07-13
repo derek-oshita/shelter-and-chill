@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!-- , {title: ' - New Movies'} -->
 
-    <%- include('../partials/head', {title: ' - New Movies'} ) %>
+    <%- include('../partials/head', {title: ' - New Movie'}) %>
     <link rel="stylesheet" href="/styles/style.css"> 
 
   <body>
-
-    <%- include('../partials/header', {h1: 'New Movie'}) %>
+    <%- include('../partials/header') %>
    
     <form action="/movies" method="POST">
         <label for="name">Name</label>

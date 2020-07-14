@@ -9,12 +9,23 @@
         </p>
     </div>
     <div>
-        <ul>
+        <!-- <ul>
          <% service.forEach ((service) => { %>
           <li><a href="/services/<%=service.id%>"><%= service.name %></a></li>
           <%})%>
-        </ul>
+        </ul> -->
 
+        <% service.forEach((serviceEl) => { %>
+          <a href="/services/<%= serviceEl._id %>">
+            <div style="display: inline-block;">
+  
+              <img src="<%= serviceEl.imgUrl%>" alt="" class="card">
+              <!-- <h4><%= serviceEl.name %></h4> -->
+              
+            </div>
+          </a>
+        <% }) %>
+        <br>
         <a href="/services/new">
           <button>Add new service</button>
         </a>

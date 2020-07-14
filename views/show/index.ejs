@@ -11,14 +11,15 @@
     <div>
       <% show.forEach((showEl) => { %>
         <a href="/shows/<%= showEl._id %>">
-          <div>
+          <div style="display: inline-block;">
 
-            <img src="<%= showEl.imgUrl%>" alt="">
-            <h4><%= showEl.name %></h4>
+            <img src="<%= showEl.imgUrl%>" alt="" class="card">
+            <!-- <h4><%= showEl.name %></h4> -->
             
           </div>
         </a>
       <% }) %>
+      <br>
       <a href="/shows/new">
         <button>Add new show</button>
       </a>

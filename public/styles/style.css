@@ -7,11 +7,11 @@
 }
 
 /* Header */
-header {
+/* header {
     background-color: steelblue; 
     display: flex; 
     height: 18vh; 
-}
+} */
 
 #logo {
     color: white; 
@@ -25,12 +25,12 @@ header {
     align-items: center;
 }
 
-#nav-container {
+/* #nav-container {
     width: 50vw; 
     display: flex; 
     justify-content: flex-end;
     align-items: center;
-}
+} */
 
 .btn-group {
     margin: 0px 15px 0px 0px; 
@@ -55,4 +55,10 @@ a {
 li {
     text-decoration: none; 
     color: black; 
+}
+
+.card {
+    width: 345px;
+    height: 230px;
+    display: inline-block;   
 }

@@ -9,11 +9,17 @@
         </p>
     </div>
     <div>
-      <% movie.forEach((movie) => { %>
-        <a href="/movies/<%= movie._id %>">
-          <h4><%= movie.name %></h4>
+      <% movie.forEach((movieEl) => { %>
+        <a href="/movies/<%= movieEl._id %>">
+          <div style="display: inline-block;">
+
+            <img src="<%= movieEl.imgUrl%>" alt="" class="card">
+            <!-- <h4><%= movieEl.name %></h4> -->
+            
+          </div>
         </a>
       <% }) %>
+      <br>
       <a href="/movies/new">
         <button>Add new movie</button>
       </a>

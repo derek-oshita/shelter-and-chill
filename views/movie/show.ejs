@@ -63,13 +63,16 @@
         </div>
 
         <!-- Edit Button -->
-        <a href="/movies/<%= movie._id %>/edit">
-          <button>Edit Movie</button>
-        </a>
-        <!-- Delete Button -->
-        <form style="display: inline;" action="/movies/<%= movie._id%>?_method=DELETE" method="POST">
-          <button type="submit">Delete Movie</button>
-        </form>
+        <div id="edit-delete-button-container">
+          <a href="/movies/<%= movie._id %>/edit">
+            <button>Edit Movie</button>
+          </a>
+          <!-- Delete Button -->
+          <form style="display: inline;" action="/movies/<%= movie._id%>?_method=DELETE" method="POST">
+            <button type="submit">Delete Movie</button>
+          </form>
+        </div>
+
       </div>
     </main>
     <!-- Footer -->

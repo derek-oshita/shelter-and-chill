@@ -6,12 +6,9 @@
     box-sizing: border-box; 
 }
 
-/* Header */
-/* header {
-    background-color: steelblue; 
-    display: flex; 
-    height: 18vh; 
-} */
+body {
+    width: 100vw;
+}
 
 #logo {
     color: white; 
@@ -56,7 +53,7 @@ li {
     text-decoration: none; 
     color: black; 
 }
-
+/* -----------------CARDS------------------- */
 .card {
     width: 345px;
     height: 230px;
@@ -128,9 +125,52 @@ li {
 .streaming-services {
     display: flex; 
     justify-content: center;
-    height: 4vh; 
+    height: 6vh; 
 }
 
 .streaming-services-list {
     text-decoration: none;
+}
+
+/* Edit / Delete Button */
+
+#edit-delete-button-container {
+    display: flex; 
+    justify-content: center;
+}
+
+/* -----------------FOOTER------------------- */
+footer{
+    /* position: fixed; */
+    bottom: 0;
+    text-align: center;
+    /* font-size: 15px; */
+    min-height: 40px;
+    height: 5vh;
+    background-color: rgb(46, 196, 182);
+    width: 100vw;
+}
+
+footer div {
+    position: relative;
+    text-align: center;
+    color: rgb(1, 22, 39);
+    min-height: 15px;
+    line-height: 5vh;
+    font-weight: bold;
+    font-size: medium;
+}
+
+/* -----------------HEADER------------------- */
+
+nav.navbar {
+    background-color: rgb(64, 81, 93);
+}
+
+.nav-link {
+    color: rgb(150, 226, 217);
+}
+
+.navbar-brand{
+    color: rgb(150, 226, 217);
 }

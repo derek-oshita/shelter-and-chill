@@ -18,26 +18,52 @@ router.get('/', (req, res) => {
 
 // New Movie
 router.get('/new', (req, res) => {
-    res.render('movie/new')
+    db.Service.find({}, (err, allServices) => {
+        if (err) return console.log(err); 
+        res.render('movie/new', {
+            service: allServices
+        })
+    })
 }); 
 
-// Create Movie 
+// Create Movie (Working w/out service relationship)
 router.post('/', (req, res) => {
     console.log(req.body) 
-    db.Movie.create(req.body, (err, newMovie) => {
+    db.Movie.create({...req.body}, (err, newMovie) => {
         if (err) return console.log(err); 
+        console.log(newMovie)
         res.redirect('/movies')
     })
 }); 
 
+// // Create Movie (in progress w/ service relationship)
+// router.post('/', (req, res) => {
+//     console.log(req.body); 
+//     db.Movie.create(req.body, (err, newMovie) => {
+//         if(err) return console.log(err); 
+//         console.log(newMovie); 
+//         db.Service.findById(req.body.serviceId, (err, foundService) => {
+//             foundService.movie.push(newMovie); 
+//             foundService.save((err, savedService) => {
+//                 console.log('savedService: ', savedService); 
+//                 res.redirect('/movies')
+//             })
+//         })
+//     })
+// }); 
+
+
 // Show Movie 
 router.get('/:id', (req, res) => {
-    db.Movie.findById(req.params.id, (err, movie) => {
+    db.Movie.findById(req.params.id)
+    .populate('service')
+    .exec((err, movie) => {
+        console.log(movie)
         if (err) return console.log(err)
         res.render('movie/show', {
             movie: movie
         })
-    })
+    }) 
 }); 
 
 // Working Edit Movie

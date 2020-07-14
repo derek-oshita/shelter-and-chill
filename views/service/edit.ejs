@@ -6,22 +6,14 @@
 
   <body>
     <%- include('../partials/header') %>
-   
-    <form action="/services" method="POST">
+   <!-- Edit Form -->
+    <form action="/services/<%=service._id%>?_method=PUT" method="POST">
         <label for="name">Name</label>
         <input type="text" id="name" name="name" value="<%= service.name %>"/>
-
+        <!-- Price Field -->
         <label for="price">Price</label>
         <input type="number" id="price" name="price" value="<%= service.price %>"/>
-
-        <label for="movie">Movie</label>
-        <select name="movieId" id="movie">
-        </select>
-
-        <label for="show">Show</label>
-        <select name="showId" id="show">
-        </select>
- 
+        <!-- Save Button -->
         <button type="submit">Save</button>
     </form>
 

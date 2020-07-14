@@ -70,7 +70,7 @@ router.get('/:id/edit', (req, res) => {
             match: {_id: req.params.id}
         })
         .exec((err, foundService) => {
-            res.render('./show/edit', {
+            res.render('show/edit', {
                 show: foundService.show[0], 
                 service: allServices, 
                 serviceProvider: foundService
@@ -78,7 +78,6 @@ router.get('/:id/edit', (req, res) => {
         })
     })
 }); 
-
 
 // Update Show (working without services)
 router.put('/:id', (req, res) => {

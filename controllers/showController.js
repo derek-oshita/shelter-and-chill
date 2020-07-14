@@ -27,7 +27,7 @@ router.get('/new', (req, res) => {
     })
 }); 
 
-// Create Show 
+// Create Show (Trying to link to services)
 router.post('/', (req, res) => {
     console.log(req.body) 
     // {...req.body}
@@ -42,6 +42,18 @@ router.post('/', (req, res) => {
         )
     })
 }); 
+
+// // Create Movie 
+// router.post('/', (req, res) => {
+//     console.log(req.body) 
+//     db.Show.create({...req.body}, (err, newShow) => {
+//         if (err) return console.log(err); 
+//         console.log(newShow)
+//         res.redirect('/shows')
+//     })
+// }); 
+
+
 
 // Show Show Fasho 
 router.get('/:id', (req, res) => {

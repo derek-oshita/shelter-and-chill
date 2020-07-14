@@ -33,6 +33,8 @@ router.post('/', (req, res) => {
     db.Show.create({...req.body}, (err, newShow) => {
         if (err) return console.log(err);
         console.log(newShow); 
+        // how do we update only the documents that were selected?
+        // db.Service.updateMany(({},) => {})
         res.redirect('/shows')
     })
 }); 

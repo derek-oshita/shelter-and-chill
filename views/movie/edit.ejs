@@ -19,8 +19,16 @@
 
         <!-- SERVICE EDIT GOES HERE -->
 
-        <label for="service">Available On</label>
-        <input type="text" id="service" name="service" value="<%=movie.service%>"
+        <label for="service">Service</label>
+        <select name="serviceId" id="service">
+            <% movie.service.forEach(service => { %>
+                <option value="<%= service._id %>"
+                  <% if(service._id.toString() === service._id.toString()){ %>
+                        selected
+                    <% } %>
+                    ><%= service.name %></option>
+              <% }) %>
+        </select>
 
         <label for="imgurl">Image Url</label>
         <input type="text" id="imgurl" name="imgUrl" value="<%= movie.imgUrl %>"/>

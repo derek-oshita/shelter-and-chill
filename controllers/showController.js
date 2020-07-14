@@ -32,7 +32,7 @@ router.post('/', (req, res) => {
     console.log(req.body) 
     db.Show.create({...req.body}, (err, newShow) => {
         if (err) return console.log(err);
-        console.log(newShow)
+        console.log(newShow); 
         res.redirect('/shows')
     })
 }); 

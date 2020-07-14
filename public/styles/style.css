@@ -65,17 +65,72 @@ li {
 
 /* Show page for movies */
 
+/* Image */
+
 #show-movie-image-container {
     display: flex; 
     justify-content: center;
+    align-items: center;
     /* Image found on pinterest: https://www.pinterest.com/pin/430023464396519373/ */
     background-image: url("https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-0/p640x640/108210711_3315306321842301_3135188879402337733_o.jpg?_nc_cat=104&_nc_sid=e007fa&_nc_ohc=FSX0wa9UjhcAX-xUdx4&_nc_ht=scontent-sjc3-1.xx&_nc_tp=6&oh=eb32fc52b968b01c259b17b072d136e5&oe=5F328260"); 
     background-size: cover;
+    height: 45vh; 
 }
 
 #show-movie-image {
-    width: 445px;
-    height: 330px;
+    width: 38vw; 
+    height: 35vh;
     display: inline-block; 
     border: 2px solid #323232; 
+}
+
+/* Like / Dislike Buttons */
+
+#show-movie-button-container {
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    border: 1px solid #323232; 
+    /* gradient by uiGradients */
+    background: #000000;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    height: 10vh; 
+}
+
+.counters {
+    width: 20vw; 
+    height: 10vh; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+/* Movie Details */
+
+#movie-details-container {
+    display: flex; 
+    justify-content: space-around;
+    align-items: center; 
+    height: 35vh; 
+}
+
+#movie-details, #synopsis {
+    width: 50vw; 
+    height: 35vh; 
+    border: 2px solid #323232; 
+    text-align: center; 
+    padding: 100px 0px 0px 0px; 
+}
+
+/* Streaming Services */
+
+.streaming-services {
+    display: flex; 
+    justify-content: center;
+    height: 4vh; 
+}
+
+.streaming-services-list {
+    text-decoration: none;
 }

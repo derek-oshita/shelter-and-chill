@@ -30,12 +30,16 @@ router.get('/new', (req, res) => {
 // Create Show 
 router.post('/', (req, res) => {
     console.log(req.body) 
-    db.Show.create({...req.body}, (err, newShow) => {
+    // {...req.body}
+    db.Show.create(req.body, (err, newShow) => {
         if (err) return console.log(err);
         console.log(newShow); 
         // how do we update only the documents that were selected?
-        // db.Service.updateMany(({},) => {})
-        res.redirect('/shows')
+        db.Service.updateMany(({_id:{$in: newShow.service}}, {$push: {show: newShow}}, (err, updateServices) => {
+            if(err) return console.log(err);
+            res.redirect('/shows')
+            })
+        )
     })
 }); 
 
@@ -59,7 +63,7 @@ router.get('/:id/edit', (req, res) => {
     })
 }); 
 
-// Update Show 
+// Update Show // $nin
 router.put('/:id', (req, res) => {
     console.log('Updated: ', req.body)
     db.Show.findByIdAndUpdate(

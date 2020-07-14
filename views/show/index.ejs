@@ -3,15 +3,20 @@
   <%- include('../partials/head', {title: ' - Shows'}) %>
   <body>
     <%- include('../partials/header') %>
-    <div>
-        <p>
-            Gummies chupa chups brownie. Halvah sweet brownie. Cotton candy chocolate bar cake. Chocolate cake wafer sweet roll dessert sugar plum dragée chocolate. Candy liquorice caramels croissant powder bear claw croissant. Donut gummies cotton candy toffee chupa chups gummies gingerbread sesame snaps. Tootsie roll macaroon gummi bears. Croissant marshmallow candy cake gingerbread gummi bears soufflé croissant. Ice cream gummi bears halvah wafer marshmallow biscuit donut. Pie bonbon sweet roll jelly-o. Sweet roll candy canes dessert jelly jelly danish wafer fruitcake. Croissant oat cake tart tiramisu croissant tiramisu macaroon carrot cake.
-        </p>
+    <div id="showContainer">
+        <div id="Rocbin">
+
+        </div>
     </div>
     <div>
-      <% show.forEach((show) => { %>
-        <a href="/shows/<%= show._id %>">
-          <h4><%= show.name %></h4>
+      <% show.forEach((showEl) => { %>
+        <a href="/shows/<%= showEl._id %>">
+          <div>
+
+            <img src="<%= showEl.imgUrl%>" alt="">
+            <h4><%= showEl.name %></h4>
+            
+          </div>
         </a>
       <% }) %>
       <a href="/shows/new">

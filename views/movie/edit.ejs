@@ -17,13 +17,10 @@
         <label for="director">Director</label>
         <input type="text" id="director" name="director" value="<%= movie.director %>"/>
 
-        <label for="upvote">Up Vote</label>
-        <input type="number" id="upvote" name="upvote" value="<%= movie.upVote %>"/>
-
-        <label for="downvote">Down Vote</label>
-        <input type="number" id="downvote" name="downvote" value="<%= movie.downVote %>"/>
-
         <!-- SERVICE EDIT GOES HERE -->
+
+        <label for="service">Available On</label>
+        <input type="text" id="service" name="service" value="<%=movie.service%>"
 
         <!-- movieService and service passed from movie controller -->
         <label for="imgurl">Image Url</label>

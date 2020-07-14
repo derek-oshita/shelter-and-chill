@@ -10,6 +10,7 @@ const router = express.Router();
 router.get('/', (req, res) => {
     db.Movie.find({}, (err, allMovies) => {
         if (err) return console.log(err); 
+        console.log(allMovies)
         res.render('movie/index', {
             movie: allMovies
         })

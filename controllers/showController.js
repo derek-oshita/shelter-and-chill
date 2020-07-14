@@ -27,38 +27,13 @@ router.get('/new', (req, res) => {
     })
 }); 
 
-// // Create Show (working without show reflecting in service document)
-// router.post('/', (req, res) => {
-//     console.log(req.body) 
-//     db.Show.create({...req.body}, (err, newShow) => {
-//         if (err) return console.log(err); 
-//         console.log(newShow)
-//         res.redirect('/shows')
-//     })
-// }); 
-
-// Create Show (Michael's Code)
-// router.post('/', (req, res) => {
-//     console.log(req.body) 
-//     // {...req.body}
-//     db.Show.create({...req.body}, (err, newShow) => {
-//         if (err) return console.log(err);
-//         console.log(newShow); 
-//         // find service, access, tell it 
-//         db.Service.updateMany(({_id:{$in: newShow.service}}, {$push: {show: newShow}}, (err, updateServices) => {
-//             if(err) return console.log(err);
-//             res.redirect('/shows')
-//             })
-//         )
-//     })
-// }); 
-
 // Create Show (Revising Michael's code)
 router.post('/', (req, res) => {
     console.log(req.body)
     db.Show.create(req.body, (err, newShow) =>{
         if (err) return console.log(err); 
         console.log(newShow); 
+        // update Service documents here 
         db.Service.updateMany({_id:{$in: newShow.service}}, {$push: {show: newShow}}, (err, updatedServices) => {
             if(err) return console.log(err); 
             res.redirect('/shows')

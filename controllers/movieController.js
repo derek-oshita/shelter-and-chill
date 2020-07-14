@@ -27,15 +27,19 @@ router.get('/new', (req, res) => {
     })
 }); 
 
-// Create Movie 
+// Create Movie (Revising Michael's code)
 router.post('/', (req, res) => {
-    console.log(req.body) 
-    db.Movie.create({...req.body}, (err, newMovie) => {
+    console.log(req.body)
+    db.Movie.create(req.body, (err, newMovie) => {
         if (err) return console.log(err); 
-        console.log(newMovie)
-        res.redirect('/movies')
+        console.log(newMovie); 
+        // update Service documents here
+        db.Service.updateMany({_id:{$in: newMovie.service}}, {$push: {movie: newMovie}}, (err, updatedServices) => {
+            if(err) return console.log(err); 
+            res.redirect('/movies')
+        })
     })
-}); 
+})
 
 // Show Movie 
 router.get('/:id', (req, res) => {

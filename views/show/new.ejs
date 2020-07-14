@@ -20,12 +20,10 @@
         <label for="director">Director</label>
         <input type="text" id="director" name="director"/>
 
-        <% services.forEach(service => { %>
-
-          <label for="<%= service._id%>"><%= service.name %> </label>
-
-          <input type="checkbox" name="service" id="<%= service._id%>" value="<%= service._id %> ">
-          <!-- Name matches property in model service = service -->
+        <!-- Add Service -->
+        <% service.forEach(service => { %>
+          <label for="<%= service._id%>"><%= service.name %></label>
+          <input type="checkbox" name="service" id="<%= service._id%>" value="<%= service._id %>">
         <% }) %> 
         
         <label for="imgUrl">Image Url</label>

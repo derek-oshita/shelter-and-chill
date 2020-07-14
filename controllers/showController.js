@@ -39,7 +39,7 @@ router.post('/', (req, res) => {
             res.redirect('/shows')
         })
     })
-})
+}); 
 
 // Show Show Fasho 
 router.get('/:id', (req, res) => {
@@ -51,17 +51,36 @@ router.get('/:id', (req, res) => {
     })
 }); 
 
-// Edit Show 
+// // Edit Show (working without services)
+// router.get('/:id/edit', (req, res) => {
+//     db.Show.findById(req.params.id, (err, show) => {
+//         if (err) return console.log(err)
+//         res.render('show/edit', {
+//             show: show
+//         })
+//     })
+// }); 
+
+// Edit Show (in progress)
 router.get('/:id/edit', (req, res) => {
-    db.Show.findById(req.params.id, (err, show) => {
-        if (err) return console.log(err)
-        res.render('show/edit', {
-            show: show
+    db.Service.find({}, (err, allServices) => {
+        db.Service.findOne({'show': req.params.id})
+        .populate({
+            path: 'show', 
+            match: {_id: req.params.id}
+        })
+        .exec((err, foundService) => {
+            res.render('./show/edit', {
+                show: foundService.show[0], 
+                service: allServices, 
+                serviceProvider: foundService
+            })
         })
     })
 }); 
 
-// Update Show // $nin
+
+// Update Show (working without services)
 router.put('/:id', (req, res) => {
     console.log('Updated: ', req.body)
     db.Show.findByIdAndUpdate(

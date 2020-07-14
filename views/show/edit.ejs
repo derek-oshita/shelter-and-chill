@@ -19,9 +19,9 @@
 
         <label for="service">Service</label>
         <select name="serviceId" id="service">
-            <% show.service.forEach(service => { %>
+            <% service.forEach(service => { %>
                 <option value="<%= service._id %>"
-                  <% if(service._id.toString() === service._id.toString()){ %>
+                  <% if(service._id.toString() === serviceProvider._id.toString()){ %>
                         selected
                     <% } %>
                     ><%= service.name %></option>

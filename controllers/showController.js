@@ -41,9 +41,6 @@ router.post('/', (req, res) => {
     })
 })
 
-
-
-
 // Show Show Fasho 
 router.get('/:id', (req, res) => {
     db.Show.findById(req.params.id, (err, show) => {

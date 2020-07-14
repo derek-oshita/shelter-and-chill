@@ -27,21 +27,22 @@ router.get('/new', (req, res) => {
     })
 }); 
 
-// Create Show 
+// Create Show (Revising Michael's code)
 router.post('/', (req, res) => {
-    console.log(req.body) 
-    // {...req.body}
-    db.Show.create(req.body, (err, newShow) => {
-        if (err) return console.log(err);
+    console.log(req.body)
+    db.Show.create(req.body, (err, newShow) =>{
+        if (err) return console.log(err); 
         console.log(newShow); 
-        // how do we update only the documents that were selected?
-        db.Service.updateMany(({_id:{$in: newShow.service}}, {$push: {show: newShow}}, (err, updateServices) => {
-            if(err) return console.log(err);
+        // update Service documents here 
+        db.Service.updateMany({_id:{$in: newShow.service}}, {$push: {show: newShow}}, (err, updatedServices) => {
+            if(err) return console.log(err); 
             res.redirect('/shows')
-            })
-        )
+        })
     })
-}); 
+})
+
+
+
 
 // Show Show Fasho 
 router.get('/:id', (req, res) => {

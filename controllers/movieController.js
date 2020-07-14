@@ -26,7 +26,7 @@ router.get('/new', (req, res) => {
     })
 }); 
 
-// Create Movie (Working w/out service relationship)
+// Create Movie 
 router.post('/', (req, res) => {
     console.log(req.body) 
     db.Movie.create({...req.body}, (err, newMovie) => {
@@ -35,23 +35,6 @@ router.post('/', (req, res) => {
         res.redirect('/movies')
     })
 }); 
-
-// // Create Movie (in progress w/ service relationship)
-// router.post('/', (req, res) => {
-//     console.log(req.body); 
-//     db.Movie.create(req.body, (err, newMovie) => {
-//         if(err) return console.log(err); 
-//         console.log(newMovie); 
-//         db.Service.findById(req.body.serviceId, (err, foundService) => {
-//             foundService.movie.push(newMovie); 
-//             foundService.save((err, savedService) => {
-//                 console.log('savedService: ', savedService); 
-//                 res.redirect('/movies')
-//             })
-//         })
-//     })
-// }); 
-
 
 // Show Movie 
 router.get('/:id', (req, res) => {

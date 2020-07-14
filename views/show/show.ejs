@@ -4,20 +4,24 @@
   <body>
     <%- include('../partials/header')%>
     <main>
+      <!-- Show Name -->
       <div><strong><%= show.name %></strong></div>
       <div>
+        <!-- Show Details -->
         <div><%= (`Genre: ${show.genre}`) %></div>
         <div><%= (`Cast: ${show.cast}`) %></div>
         <div><%= (`Director: ${show.director}`) %></div>
-       <!-- SERVICES -->
         <div><%= (`Up Vote: ${show.upVote}`) %></div>
         <div><%= (`Down Vote: ${show.downVote}`) %></div>
         <div><%= (`Synopsis: ${show.synopsis}`) %></div>
-        
+        <!-- Edit Button -->
         <a href="/shows/<%= show._id %>/edit">
           <button>Edit Show</button>
         </a>
-
+        <!-- Delete Button -->
+      <form style="display: inline;" action="/shows/<%=show._id%>?_method=DELETE" method="POST">
+        <button type="submit">Delete Show</button>
+      </form>
       </div>
     </main>
     <%- include('../partials/footer') %>

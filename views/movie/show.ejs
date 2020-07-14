@@ -16,13 +16,10 @@
         <div><%= (`Synopsis: ${movie.synopsis}`) %></div>
         <!-- Movie Streaming Services -->
         <div> 
-          <!-- This works for first position, try .map() for more than one -->
-          <!-- Available On:  movie.service[0].name  -->
           Available On: 
           <% movie.service.forEach((service) => { %>
             <a href="/services/<%=service.id%>"><li><%= service.name %></li></a>
           <% }) %>
-      
         </div>
         <!-- Edit Button -->
         <a href="/movies/<%= movie._id %>/edit">

@@ -2,7 +2,7 @@ const express = require('express');
 const db = require('../models'); 
 const router = express.Router(); 
 
-// Current path = '/movies'
+// Current path = '/shows'
 
 // --- Routes --- // 
 
@@ -130,7 +130,7 @@ router.delete('/:id', (req, res) => {
         if (err) return console.log(err); 
         console.log(deletedShow); 
         db.Service.findOne({'show': {$all:[req.params.id]}}, (err, foundService) => {
-          foundService.movie.remove(req.params.id); 
+          foundService.show.remove(req.params.id); 
           foundService.save((err, updatedService) => {
               console.log(updatedService); 
               res.redirect('/shows')

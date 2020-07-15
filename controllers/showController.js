@@ -110,6 +110,7 @@ router.put('/:id', (req, res) => {
                     foundService.save((err, savedService) => {
                         db.Service.findById(req.body.serviceId, (err, newService) => {
                             newService.show.push(updatedShow); 
+                            console.log(updatedShow)
                             newService.save((err, savedNewService) => {
                                 res.redirect(`/shows/${req.params.id}`); 
                             })

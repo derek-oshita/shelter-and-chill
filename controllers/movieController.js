@@ -27,7 +27,7 @@ router.get('/new', (req, res) => {
     })
 }); 
 
-// Create Movie (Revising Michael's code)
+// Create Movie (Thanks, Michael!)
 router.post('/', (req, res) => {
     console.log(req.body)
     db.Movie.create(req.body, (err, newMovie) => {
@@ -79,7 +79,7 @@ router.get('/:id', (req, res) => {
 //      )
 // }); 
 
-// Edit Movie (w/ services)
+// Edit Movie
 router.get('/:id/edit', (req, res) => {
     console.log(req.params.id)
     db.Service.find({}, (err, allServices) => {
@@ -98,12 +98,11 @@ router.get('/:id/edit', (req, res) => {
     })
 }); 
 
-// Movie Update (In progress)
+// Movie Update (THANKS YULIA!!!)
 router.put('/:id/', (req, res) => {
     // reassigns service property to empty array
     if (!req.body.service) {
         req.body.service = []
-
     }
     console.log(req.params.id)
     db.Movie.findByIdAndUpdate(
@@ -134,17 +133,7 @@ router.put('/:id/', (req, res) => {
     res.redirect(`/movies/${req.params.id}`); 
 }) ; 
 
-
-// // Destroy Movie (v1 working)
-// router.delete('/:id', (req, res) => {
-//     db.Movie.findByIdAndDelete(req.params.id, (err, movie) => {
-//         console.log(movie)
-//         if (err) return console.log(err)
-//         res.redirect('/movies')
-//     })
-// }); 
-
-// Destroy Movie (v2)
+// Destroy Movie
 router.delete('/:id', (req, res) => {
     db.Movie.findByIdAndDelete(req.params.id, (err, deletedMovie) => {
         if (err) return console.log(err); 
@@ -159,5 +148,5 @@ router.delete('/:id', (req, res) => {
     })
 })
 
-// --- Export Router ---// 
+// --- Export Router --- // 
 module.exports = router; 

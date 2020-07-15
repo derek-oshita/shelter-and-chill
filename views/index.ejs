@@ -2,15 +2,37 @@
 <html lang="en">
 <!-- Head -->
 <%- include('partials/head') %>
+<link rel="stylesheet" href="styles/main.css" >
 <!-- Body -->
-<body>
+<body id="landing-page-body">
     <!-- Header -->
         <%- include('partials/header') %>
     <!-- Main Section -->
         <main>
-		    <p>
-                Bear claw chupa chups cookie tootsie roll caramels ice cream. Croissant gummi bears soufflé caramels pastry bonbon gummi bears bear claw gummies. Powder danish ice cream muffin pudding jelly beans powder oat cake gummies. Chupa chups chocolate cake apple pie croissant liquorice gummi bears gingerbread wafer. Wafer brownie oat cake carrot cake candy canes cake icing chupa chups gummies. Gummi bears jelly-o marzipan halvah gingerbread muffin jujubes. Jelly beans sweet donut cookie. Bear claw dessert biscuit chupa chups ice cream tiramisu pudding jelly beans lemon drops. Carrot cake donut chocolate.
-            </p>
+            <!-- Catch Phrase Container -->
+            <section id="catch-phrase-container">
+                <h2 id="catch-phrase" class="animate__animated animate__fadeIn">
+                    Come chill with us...
+                </h2>
+            </section>
+            <!-- Content Container -->
+            <section id="content-container">
+                <!-- Movie -->
+                <a href="/movies">
+                    <div id="movie-container" class="landing-page-content">
+                    </div>
+                </a>
+                <!-- Show -->
+                <a href="/shows">
+                    <div id="show-container" class="landing-page-content">
+                    </div>
+                </a>
+                <!-- Service -->
+                <a href="/services">
+                    <div id="service-container" class="landing-page-content">
+                    </div>
+                </a>
+            </section>
         </main>
     <!-- Footer -->
         <%- include('partials/footer') %>

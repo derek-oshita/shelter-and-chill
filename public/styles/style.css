@@ -12,10 +12,10 @@ body {
     background-repeat: no-repeat;
     background-size: cover; 
 }
-main{
+/* main{
     display: flex;
     align-items: center;
-}
+} */
 
 #logo {
     color: white; 
@@ -356,4 +356,32 @@ nav.navbar {
   }
 #footer-text {
     color: white; 
+}
+
+/* -----------------CAROUSEL------------------- */
+.carousel-inner {
+    height: 70vh;
+}
+.carousel-item {
+    height: 100%;
+}
+
+.c-item1 {
+    padding: 1px;
+    background-color: #40515D;
+    height: 100%;
+}
+.c-item2 {
+    padding: 1px;
+    background-color: rgb(128, 0, 0);
+    height: 100%;
+}
+.c-item3 {
+    padding: 1px;
+    background-color: #BEC5C7;
+    height: 100%;
+}
+
+.c-item-row {
+    padding: 25px;
 }

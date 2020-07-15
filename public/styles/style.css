@@ -12,10 +12,6 @@ body {
     background-repeat: no-repeat;
     background-size: cover; 
 }
-main{
-    display: flex;
-    align-items: center;
-}
 
 #logo {
     color: white; 
@@ -67,7 +63,7 @@ li {
     display: inline-block;   
 }
 
-/* Index page for movies */
+/* Index page for movies/shows */
 
 #catch-phrase-container-partial {
     display: flex; 

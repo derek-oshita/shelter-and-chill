@@ -21,15 +21,12 @@
         <!-- Change Service Providers -->
         <% service.forEach (service => {%>
           <label for="<%=service._id%>"><%=service.name%></label>
-          <input type="checkbox" name="service">
-          <%for (let i = 0; i < movie.service.length; i++ ) { %>
-            <% if (movie.service[i] === service._id ) {%>
-              <input value ="<%=service._id%>" type="checkbox" name="service" id="<%=service._id%>" checked>
-           <% } %>
-
-           <!-- <input value="<%=service._id%>" type="checkbox" name="service" id="<%=service._id%>">  -->
-           
-           <%}})%>
+          <input value ="<%=service._id%>" type="checkbox" name="service" id="<%=service._id%>"
+          <% for (let i = 0; i < movie.service.length; i++) { %>
+            <% if (service._id.toString() === movie.service[i].toString()) {%>
+              checked>
+          <%}%>
+        <%}})%>
 
         <label for="imgurl">Image Url</label>
         <input type="text" id="imgurl" name="imgUrl" value="<%= movie.imgUrl %>"/>

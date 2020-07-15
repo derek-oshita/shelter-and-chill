@@ -55,7 +55,7 @@ router.get('/:id', (req, res) => {
     }) 
 }); 
 
-// // Working Edit Movie (without services)
+// // Working Edit Movie (without services relationship)
 // router.get('/:id/edit', (req, res) => {
 //     db.Movie.findById(req.params.id, (err, movie) => {
 //         if (err) return console.log(err)
@@ -65,7 +65,7 @@ router.get('/:id', (req, res) => {
 //     })
 // }); 
 
-// // Working Update Movie (without services)
+// // Working Update Movie (without services relationship)
 // router.put('/:id', (req, res) => {
 //     console.log('Updated: ', req.body)
 //     db.Movie.findByIdAndUpdate(
@@ -81,6 +81,7 @@ router.get('/:id', (req, res) => {
 
 // Edit Movie (w/ services)
 router.get('/:id/edit', (req, res) => {
+    console.log(req.params.id)
     db.Service.find({}, (err, allServices) => {
         db.Service.findOne({'movie': req.params.id})
         .populate({

@@ -97,24 +97,6 @@ router.get('/:id/edit', (req, res) => {
     })
 }); 
 
-// // Edit Movie (In progress)
-// router.get('/:id/edit', (req, res) => {
-//     db.Service.find({}, (err, allServices) => {
-//         db.Service.findOne({'movie': req.params.id})
-//         .populate({
-//             path: 'movie', 
-//             match: {_id: req.params.id}
-//         })
-//         .exec((err, foundService) => {
-//             res.render('./movie/edit', {
-//                 movie: foundService.movie[0], 
-//                 service: allServices, 
-//                 serviceProvider: foundService
-//             })
-//         })
-//     })
-// }); 
-
 // Movie Update (In progress)
 router.put('/:id/', (req, res) => {
     console.log(req.params.id)

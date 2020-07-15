@@ -134,7 +134,7 @@ router.delete('/:id', (req, res) => {
           foundService.movie.remove(req.params.id); 
           foundService.save((err, updatedService) => {
               console.log(updatedService); 
-              res.redirect('/movies')
+              res.redirect('/shows')
             })
         })
     })

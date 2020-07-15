@@ -66,7 +66,6 @@ router.put('/:id', (req, res) => {
     )
 });
 
-
 //#*#*#*#*#* DELETE SERVICE *#*#*#*#*#
 router.delete('/:id', (req, res) => {
     db.Service.findByIdAndDelete(req.params.id, (err, service) => {

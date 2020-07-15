@@ -2,7 +2,7 @@ const express = require('express');
 const db = require('../models'); 
 const router = express.Router(); 
 
-// Current path = '/movies'
+// Current path = '/shows'
 
 // --- Routes --- // 
 
@@ -124,12 +124,18 @@ router.put('/:id', (req, res) => {
     )
 }); 
 
-
 // Destroy Show 
 router.delete('/:id', (req, res) => {
-    db.Show.findByIdAndDelete(req.params.id, (err, show) => {
-        if (err) return console.log(err)
-        res.redirect('/shows')
+    db.Show.findByIdAndDelete(req.params.id, (err, deletedShow) => {
+        if (err) return console.log(err); 
+        console.log(deletedShow); 
+        db.Service.findOne({'show': {$all:[req.params.id]}}, (err, foundService) => {
+          foundService.show.remove(req.params.id); 
+          foundService.save((err, updatedService) => {
+              console.log(updatedService); 
+              res.redirect('/shows')
+            })
+        })
     })
 }); 
 

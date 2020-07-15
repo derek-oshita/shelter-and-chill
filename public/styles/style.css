@@ -12,10 +12,13 @@ body {
     background-repeat: no-repeat;
     background-size: cover; 
 }
+<<<<<<< HEAD
 /* main{
     display: flex;
     align-items: center;
 } */
+=======
+>>>>>>> submaster
 
 #logo {
     color: white; 
@@ -67,7 +70,7 @@ li {
     display: inline-block;   
 }
 
-/* Index page for movies */
+/* Index page for movies/shows */
 
 #catch-phrase-container-partial {
     display: flex; 

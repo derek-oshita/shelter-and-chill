@@ -161,7 +161,7 @@ router.delete('/:id', (req, res) => {
     db.Movie.findByIdAndDelete(req.params.id, (err, deletedMovie) => {
         if (err) return console.log(err); 
         console.log(deletedMovie); 
-        db.Service.findOne({'movie': req.params.id}, (err, foundService) => {
+        db.Service.findOne({'movie': {$all:[req.params.id]}}, (err, foundService) => {
           foundService.movie.remove(req.params.id); 
           foundService.save((err, updatedService) => {
               console.log(updatedService); 

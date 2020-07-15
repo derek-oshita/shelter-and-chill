@@ -147,19 +147,29 @@ router.put('/:id/', (req, res) => {
 }) ; 
 
 
-// Destroy Movie 
-router.delete('/:id', (req, res) => {
-    db.Movie.findByIdAndDelete(req.params.id, (err, movie) => {
-        console.log(movie)
-        if (err) return console.log(err)
-        res.redirect('/movies')
-    })
-}); 
-
-// // Destroy Movie 
+// // Destroy Movie (v1 working)
 // router.delete('/:id', (req, res) => {
-//     db.Movie
-// })
+//     db.Movie.findByIdAndDelete(req.params.id, (err, movie) => {
+//         console.log(movie)
+//         if (err) return console.log(err)
+//         res.redirect('/movies')
+//     })
+// }); 
+
+// Destroy Movie (v2)
+router.delete('/:id', (req, res) => {
+    db.Movie.findByIdAndDelete(req.params.id, (err, deletedMovie) => {
+        if (err) return console.log(err); 
+        console.log(deletedMovie); 
+        db.Service.findOne({'movie': req.params.id}, (err, foundService) => {
+          foundService.movie.remove(req.params.id); 
+          foundService.save((err, updatedService) => {
+              console.log(updatedService); 
+              res.redirect('/movies')
+            })
+        })
+    })
+})
 
 // --- Export Router ---// 
 module.exports = router; 

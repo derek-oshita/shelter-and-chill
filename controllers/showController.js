@@ -43,12 +43,15 @@ router.post('/', (req, res) => {
 
 // Show Show Fasho 
 router.get('/:id', (req, res) => {
-    db.Show.findById(req.params.id, (err, show) => {
+    db.Show.findById(req.params.id)
+    .populate('service')
+    .exec((err, show) => {
+        console.log(show)
         if (err) return console.log(err)
         res.render('show/show', {
             show: show
         })
-    })
+    }) 
 }); 
 
 // // Edit Show (working without services)
@@ -61,7 +64,21 @@ router.get('/:id', (req, res) => {
 //     })
 // }); 
 
-// Edit Show (in progress)
+// // Update Show (working without services)
+// router.put('/:id', (req, res) => {
+//     console.log('Updated: ', req.body)
+//     db.Show.findByIdAndUpdate(
+//         req.params.id, 
+//         req.body, 
+//         {new: true},
+//         (err, show) => {
+//             if(err) return console.log(err); 
+//             res.redirect('/shows')
+//         }
+//      )
+// }); 
+
+// Edit Show (working with services but only if show was created from new route)
 router.get('/:id/edit', (req, res) => {
     db.Service.find({}, (err, allServices) => {
         db.Service.findOne({'show': req.params.id})
@@ -79,19 +96,33 @@ router.get('/:id/edit', (req, res) => {
     })
 }); 
 
-// Update Show (working without services)
+// Update Show (in progress)
 router.put('/:id', (req, res) => {
-    console.log('Updated: ', req.body)
     db.Show.findByIdAndUpdate(
         req.params.id, 
         req.body, 
-        {new: true},
-        (err, show) => {
-            if(err) return console.log(err); 
-            res.redirect('/shows')
+        {new: true}, 
+        (err, updatedShow) => {
+            if(err) return console.log(err)
+            db.Service.findOne({'show': req.params.id}, (err, foundService) => {
+                if(foundService._id.toString() !== req.body.serviceId) {
+                    foundService.show.remove(req.params.id); 
+                    foundService.save((err, savedService) => {
+                        db.Service.findById(req.body.serviceId, (err, newService) => {
+                            newService.show.push(updatedShow); 
+                            newService.save((err, savedNewService) => {
+                                res.redirect(`/shows/${req.params.id}`); 
+                            })
+                        })
+                    })
+                } else {
+                    res.redirect(`/shows/${req.params.id}`);  
+                }
+            })
         }
-     )
+    )
 }); 
+
 
 // Destroy Show 
 router.delete('/:id', (req, res) => {

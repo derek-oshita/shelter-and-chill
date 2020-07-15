@@ -12,6 +12,10 @@ body {
     background-repeat: no-repeat;
     background-size: cover; 
 }
+main{
+    display: flex;
+    align-items: center;
+}
 
 #logo {
     color: white; 
@@ -276,6 +280,80 @@ nav.navbar {
     color: rgb(150, 226, 217);
 }
 
+/* -----------------ADD FAVS------------------- */
+
+.add-buttons-container{
+    display: flex;
+    align-items: center;
+    width: 70vw;
+    display: block;
+    justify-content: center;
+}
+.add {
+    height: 50px;
+    width: 60vw;
+    margin: 20px;
+    display: block;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    align-items: center;
+}
+
+.add-movie {
+    background-color: #7F8B92;
+}
+
+.add-show {
+    background-color: #96E2D9;
+}
+
+.add-service {
+    background-color: #BEC5C7;
+}
+
+/* -----------------ABOUT------------------- */
+.card-container{
+    width: 100vw;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.about-card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 350px;
+    min-width: 250px;
+    margin: 0px 25px;
+    text-align: center;
+    background-size: cover;
+  }
+  
+  .title {
+    color: grey;
+    font-size: 18px;
+  }
+  
+  p button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+  }
+  
+  .about-card a {
+    text-decoration: none;
+    font-size: 22px;
+    color: black;
+  }
+  
+  button:hover, a:hover {
+    opacity: 0.7;
+  }
 #footer-text {
     color: white; 
 }

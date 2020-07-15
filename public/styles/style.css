@@ -9,6 +9,10 @@
 body {
     width: 100vw;
 }
+main{
+    display: flex;
+    align-items: center;
+}
 
 #logo {
     color: white; 
@@ -256,24 +260,31 @@ nav.navbar {
 
 /* -----------------ADD FAVS------------------- */
 
+.add-buttons-container{
+    display: flex;
+    align-items: center;
+    width: 70vw;
+    display: block;
+}
 .add {
-    height: 20vh;
-    width: 40vh;
+    height: 50px;
+    width: 60vw;
     margin: 20px;
     display: block;
-    border-radius: 25px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .add-movie {
-    background-color: salmon;
+    background-color: #7F8B92;
 }
 
 .add-show {
-    background-color: springgreen;
+    background-color: #96E2D9;
 }
 
 .add-service {
-    background-color: teal;
+    background-color: #BEC5C7;
 }
 
 /* -----------------ABOUT------------------- */
@@ -281,6 +292,7 @@ nav.navbar {
     width: 100vw;
     align-items: center;
     display: flex;
+    justify-content: space-evenly;
 }
 .about-card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -288,6 +300,7 @@ nav.navbar {
     margin: auto;
     text-align: center;
     background-size: cover;
+    justify-content: space-evenly;
   }
   
   .title {
@@ -295,7 +308,7 @@ nav.navbar {
     font-size: 18px;
   }
   
-  button {
+  p button {
     border: none;
     outline: 0;
     display: inline-block;

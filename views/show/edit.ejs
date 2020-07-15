@@ -17,16 +17,14 @@
         <label for="director">Director</label>
         <input type="text" id="director" name="director" value="<%= show.director %>"/>
 
-        <label for="service">Service</label>
-        <select name="serviceId" id="service">
-            <% show.service.forEach(service => { %>
-                <option value="<%= service._id %>"
-                  <% if(service._id.toString() === service._id.toString()){ %>
-                        selected
-                    <% } %>
-                    ><%= service.name %></option>
-              <% }) %>
-        </select>
+        <!-- Change Service Providers -->
+        <% service.forEach (service => {%>
+          <label for="<%=service._id%>"><%=service.name%></label>
+          <% if (service._id.toString() === serviceProvider._id.toString()) {%>
+            <input type="checkbox" name="service" id="<%=service._id%>" checked>
+        <%} else {%>  <input type="checkbox" name="service" id="<%=service._id%>">
+        <%}})%>
+
         <!-- showService and service passed from show controller -->
         <label for="imgurl">Image Url</label>
         <input type="text" id="imgurl" name="imgurl" value="<%= show.imgUrl %>"/>

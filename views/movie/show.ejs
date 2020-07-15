@@ -14,8 +14,8 @@
       <!-- Buttons -->
       <div id="show-movie-button-container">
         <!-- Likes -->
-        <button class="counters" id="movie-likes">
-          <span id="movie-upvotes" >
+        <button class="counters" id="movie-likes" value="<%=movie.upVote%>">
+          <span id="movie-upvotes">
            <%=movie.upVote%>
           </span>
           <!-- Thumbs Up -->
@@ -34,7 +34,6 @@
           </svg>
         </button>
       </div>
-
       <!-- Movie Details -->
       <div id="movie-details-container">
         <!-- Genre, Cast, Director -->

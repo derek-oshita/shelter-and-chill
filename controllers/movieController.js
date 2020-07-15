@@ -54,28 +54,46 @@ router.get('/:id', (req, res) => {
     }) 
 }); 
 
-// Working Edit Movie
+// // Working Edit Movie (without services)
+// router.get('/:id/edit', (req, res) => {
+//     db.Movie.findById(req.params.id, (err, movie) => {
+//         if (err) return console.log(err)
+//         res.render('movie/edit', {
+//             movie: movie
+//         })
+//     })
+// }); 
+
+// // Working Update Movie (without services)
+// router.put('/:id', (req, res) => {
+//     console.log('Updated: ', req.body)
+//     db.Movie.findByIdAndUpdate(
+//         req.params.id, 
+//         req.body, 
+//         {new: true},
+//         (err, movie) => {
+//             if(err) return console.log(err); 
+//             res.redirect('/movies')
+//         }
+//      )
+// }); 
+
+// Edit Movie (w/ services)
 router.get('/:id/edit', (req, res) => {
-    db.Movie.findById(req.params.id, (err, movie) => {
-        if (err) return console.log(err)
-        res.render('movie/edit', {
-            movie: movie
+    db.Service.find({}, (err, allServices) => {
+        db.Service.findOne({'movie': req.params.id})
+        .populate({
+            path: 'movie', 
+            match: {_id: req.params.id}
+        })
+        .exec((err, foundService) => {
+            res.render('movie/edit', {
+                movie: foundService.movie[0], 
+                service: allServices, 
+                serviceProvider: foundService
+            })
         })
     })
-}); 
-
-// Working Update Movie 
-router.put('/:id', (req, res) => {
-    console.log('Updated: ', req.body)
-    db.Movie.findByIdAndUpdate(
-        req.params.id, 
-        req.body, 
-        {new: true},
-        (err, movie) => {
-            if(err) return console.log(err); 
-            res.redirect('/movies')
-        }
-     )
 }); 
 
 // // Edit Movie (In progress)

@@ -100,6 +100,11 @@ router.get('/:id/edit', (req, res) => {
 
 // Movie Update (In progress)
 router.put('/:id/', (req, res) => {
+    // reassigns service property to empty array
+    if (!req.body.service) {
+        req.body.service = []
+
+    }
     console.log(req.params.id)
     db.Movie.findByIdAndUpdate(
         req.params.id, 

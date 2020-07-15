@@ -97,32 +97,70 @@ router.get('/:id/edit', (req, res) => {
 }); 
 
 // Update Show (in progress)
-router.put('/:id', (req, res) => {
+// router.put('/:id', (req, res) => {
+//     db.Show.findByIdAndUpdate(
+//         req.params.id, 
+//         req.body, 
+//         {new: true}, 
+//         (err, updatedShow) => {
+//             if(err) return console.log(err)
+//             db.Service.findOne({'show': req.params.id}, (err, foundService) => {
+//                 if(foundService._id.toString() !== req.body.serviceId) {
+//                     foundService.show.remove(req.params.id); 
+//                     foundService.save((err, savedService) => {
+//                         db.Service.findById(req.body.serviceId, (err, newService) => {
+//                             newService.show.push(updatedShow); 
+//                             console.log(updatedShow)
+//                             newService.save((err, savedNewService) => {
+//                                 res.redirect(`/shows/${req.params.id}`); 
+//                             })
+//                         })
+//                     })
+//                 } else {
+//                     res.redirect(`/shows/${req.params.id}`);  
+//                 }
+//             })
+//         }
+//     )
+// }); 
+
+// Show Update (In progress)
+router.put('/:id/', (req, res) => {
+    // reassigns service property to empty array
+    if (!req.body.service) {
+        req.body.service = []
+
+    }
+    console.log(req.params.id)
     db.Show.findByIdAndUpdate(
         req.params.id, 
         req.body, 
         {new: true}, 
         (err, updatedShow) => {
-            if(err) return console.log(err)
-            db.Service.findOne({'show': req.params.id}, (err, foundService) => {
-                if(foundService._id.toString() !== req.body.serviceId) {
-                    foundService.show.remove(req.params.id); 
-                    foundService.save((err, savedService) => {
-                        db.Service.findById(req.body.serviceId, (err, newService) => {
-                            newService.show.push(updatedShow); 
-                            console.log(updatedShow)
-                            newService.save((err, savedNewService) => {
-                                res.redirect(`/shows/${req.params.id}`); 
-                            })
-                        })
-                    })
-                } else {
-                    res.redirect(`/shows/${req.params.id}`);  
+            if (err) return console.log(err); 
+            console.log(updatedShow)
+            // db.inventory.find( { tags: { $all: ["red", "blank"] } } )
+            // find services with this show
+            db.Service.find({'show': {$all:[req.params.id]}}, (err, foundServices) => {
+                console.log(foundServices)
+                // iterate over all services 
+                for (let i = 0; i < foundServices.length; i++ ) {
+                    let foundService = foundServices[i]; 
+                    for (let j = 0; j < foundService.show; j++) {
+                        // find the correct show by id
+                        if (foundService.show[j]._id === updatedShow._id ) {
+                            // assign to the updated show
+                            foundService.show[j] = updatedShow
+                        }
+                    }
                 }
             })
         }
     )
-}); 
+    res.redirect(`/shows/${req.params.id}`); 
+}) ; 
+
+
 
 // Destroy Show 
 router.delete('/:id', (req, res) => {

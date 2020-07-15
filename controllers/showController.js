@@ -124,13 +124,12 @@ router.put('/:id', (req, res) => {
     )
 }); 
 
-
 // Destroy Show 
 router.delete('/:id', (req, res) => {
     db.Show.findByIdAndDelete(req.params.id, (err, deletedShow) => {
         if (err) return console.log(err); 
         console.log(deletedShow); 
-        db.Service.findOne({'show': req.params.id}, (err, foundService) => {
+        db.Service.findOne({'show': {$all:[req.params.id]}}, (err, foundService) => {
           foundService.movie.remove(req.params.id); 
           foundService.save((err, updatedService) => {
               console.log(updatedService); 
@@ -138,7 +137,7 @@ router.delete('/:id', (req, res) => {
             })
         })
     })
-})
+}); 
 
 // --- Export Router ---// 
 module.exports = router; 

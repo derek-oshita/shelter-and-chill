@@ -22,10 +22,12 @@ const showSchema = new mongoose.Schema ({
         type: String
     }, 
     upVote: {
-        type: Number
+        type: Number, 
+        default: 0
     }, 
     downVote: {
-        type: Number
+        type: Number,
+        default: 0
     }, 
     service: [{
         type: mongoose.Schema.Types.ObjectId, 

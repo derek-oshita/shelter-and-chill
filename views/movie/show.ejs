@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <!-- Head -->
-  <%- include('../partials/head', {title: ` - ${movie.name}`}) %>
-
+  <%- include('../partials/head', {title: ` ${movie.name}`}) %>
+  <%- include('../partials/head', {title: ' - Movies'}) %>
   <!-- Header -->
   <body>
     <%- include('../partials/header') %>
-
     <!-- Movie Poster -->
       <main>
       <div id="show-movie-image-container">
@@ -16,7 +15,7 @@
       <div id="show-movie-button-container">
         <!-- Likes -->
         <button class="counters" id="movie-likes">
-          <span id="movie-upvotes">
+          <span id="movie-upvotes" >
            <%=movie.upVote%>
           </span>
           <!-- Thumbs Up -->
@@ -49,7 +48,6 @@
           <%= (`Synopsis: ${movie.synopsis}`) %>
         </div>
       </div>
-
         <!-- Movie Streaming Services -->
         <div class="streaming-services"> 
           <span>

@@ -3,11 +3,12 @@
   <%- include('../partials/head', {title: ' - Shows'}) %>
   <body>
     <%- include('../partials/header') %>
-    <div id="showContainer">
-        <div id="Rocbin">
-
-        </div>
-    </div>
+    <!-- Catch Phrase Container -->
+    <section id="catch-phrase-container-partial">
+      <h2 id="catch-phrase-partial" class="animate__animated animate__fadeIn">
+          Chill shows...
+      </h2>
+    </section>
     <div>
       <% show.forEach((showEl) => { %>
         <a href="/shows/<%= showEl._id %>">

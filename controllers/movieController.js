@@ -139,22 +139,7 @@ router.put('/:id/', (req, res) => {
                             foundService.movie[j] = updatedMovie
                         }
                     }
-                    // for (let j = 0; j < req.body.service ; j++ ) {
-                    //     if (foundService._id.toString() !== req.body.service[j]){
-                    //         foundService.movie.remove(req.params.id); 
-                    //         foundService.save((err, savedService) => {
-                    //             db.Service.findById(req.body.serviceId, (err, newService) => {
-                    //                 newService.movie.push(updatedMovie); 
-                    //                 newService.save((err, savedNewService) => {
-                    //                     res.redirect(`/movies/${req.params.id}`)
-                    //                 })
-                    //             })
-                    //         })
-                    //     } 
-                    // } res.redirect(`/movies/${req.params.id}`); 
                 }
-                
-                // }
             })
         }
     )

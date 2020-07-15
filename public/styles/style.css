@@ -253,3 +253,25 @@ nav.navbar {
 .navbar-brand{
     color: rgb(150, 226, 217);
 }
+
+/* -----------------HEADER------------------- */
+
+.add {
+    height: 20vh;
+    width: 40vh;
+    margin: 20px;
+    display: block;
+    border-radius: 25px;
+}
+
+.add-movie {
+    background-color: salmon;
+}
+
+.add-show {
+    background-color: springgreen;
+}
+
+.add-service {
+    background-color: teal;
+}

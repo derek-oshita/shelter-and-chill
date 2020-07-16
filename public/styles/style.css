@@ -418,30 +418,102 @@ nav.navbar {
     color: white; 
 }
 
-/* -----------------CAROUSEL------------------- */
+/* ----------------- Movies Carousel ------------------- */
+
+
+#carousel-container {
+    height: 70vh;
+}
+
+#carouselExampleControls {
+    height: 70vh; 
+}
+
+/* #carousel-item active {
+    height: 50vh; 
+} */
+
+.carousel-inner {
+    height: 100vh; 
+}
+
 .carousel-inner {
     height: 70vh;
 }
-.carousel-item {
-    height: 100%;
+
+/* First Card */
+
+#first-slide-container {
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
 }
 
-.c-item1 {
+/* Big Grey Box  */
+
+.carousel-item {
+    /* display: flex; 
+    justify-content: center;
+    align-items: center; */
+    height: 100%;
     padding: 1px;
     background-color: #40515D;
-    height: 100%;
+    /* height: 100%; */
+    height: 70vh; 
+    /* display: flex;  */
+    justify-content: center;
 }
-.c-item2 {
-    padding: 1px;
-    background-color: rgb(128, 0, 0);
-    height: 100%;
+
+/* First Slide */
+#first-slide {
+    height: 45vh; 
+    width: 60vw; 
+    border: 2px solid white; 
 }
-.c-item3 {
-    padding: 1px;
-    background-color: #BEC5C7;
-    height: 100%;
+
+#first-image-container {
+    background: white;
+    /* display: inline-block; */
+    display: flex; 
+    justify-content: center; 
+    height: 70vh; 
+    background-color: #40515D;
+
 }
 
 .c-item-row {
     padding: 25px;
+}
+
+/* Subsequent Slides - Created Movies */
+
+/* Container for card */
+.carousel-card {
+    /* height: 30vh; 
+    width: 50vh;  */
+    /* This will show the blue behind the movies */
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+}
+
+#carousel-image {
+    background-size: cover; 
+    height: 30vh; 
+    width: 50vh;
+    border: 2px solid white; 
+    margin: 0px 0px 0px 100px; 
+}
+
+/* Add New Movie Button */
+
+#add-new-movie-container {
+    height: 8vh; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+#add-new-movie-button {
+    width: 8vw; 
 }

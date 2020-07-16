@@ -129,6 +129,10 @@ li {
 
 /* Movie Details */
 
+#movie-show-title {
+    font-size: 50px; 
+}
+
 #movie-details-container {
     display: flex; 
     justify-content: space-around;

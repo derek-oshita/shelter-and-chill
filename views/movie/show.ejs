@@ -38,7 +38,7 @@
       <div id="movie-details-container">
         <!-- Genre, Cast, Director -->
         <div id="movie-details">
-          <p class="title"><%= movie.name %></p>
+          <p class="movie-show-title"><%= movie.name %></p>
           <p><%= (`Genre: ${movie.genre}`) %></p>
           <p><%= (`Cast: ${movie.cast}`) %></p>
           <p><%= (`Director: ${movie.director}`) %></p>
@@ -65,6 +65,9 @@
           <a href="/movies/<%= movie._id %>/edit">
             <button>Edit Movie</button>
           </a>
+          <!-- Divider -->
+          <div class="divider">
+          </div>
           <!-- Delete Button -->
           <form style="display: inline;" action="/movies/<%= movie._id%>?_method=DELETE" method="POST">
             <button type="submit">Delete Movie</button>

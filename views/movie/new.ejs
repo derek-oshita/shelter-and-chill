@@ -5,57 +5,58 @@
     <link rel="stylesheet" href="/styles/style.css"> 
   <body>
     <%- include('../partials/header') %>
-    <form action="/movies" method="POST">
-      <div class="form-row">
-        <div class="form-group col-md-12">
-          <label for="name">Name:</label>
-          <input type="text" class="form-control" id="name" name="name" placeholder="Movie title"/>
+    <div class=".movie-new-container">
+      <form action="/movies" method="POST">
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Movie title"/>
+          </div>
         </div>
-      </div>
-    
-      <div class="form-row">
-        <div class="form-group col-md-6" >
-          <label for="genre">Genre:</label>
-          <input type="text" class="form-control" id="genre" name="genre" placeholder="Genre or Category "/>
+      
+        <div class="form-row">
+          <div class="form-group col-md-6" >
+            <label for="genre">Genre:</label>
+            <input type="text" class="form-control" id="genre" name="genre" placeholder="Genre or Category "/>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="imgUrl">Image URL:</label>
+            <input type="text" class="form-control" id="imgUrl" name="imgUrl" placeholder="Image URL "/>
+          </div>
         </div>
-        <div class="form-group col-md-6">
-          <label for="imgUrl">Image URL:</label>
-          <input type="text" class="form-control" id="imgUrl" name="imgUrl" placeholder="Image URL "/>
+      
+        <div class="form-group">
+          <div class="form-check form-check-inline">
+        <!-- Add Service -->
+        <% service.forEach(service => { %>
+          <input class="form-check-input" type="checkbox" name="service" id="<%= service._id%>" value="<%= service._id %>">
+          <label class="form-check-label" for="<%= service._id%>">
+            <%= service.name %>
+          </label>
+        <% }) %> 
+          </div>
         </div>
-      </div>
-    
-      <div class="form-group">
-        <div class="form-check form-check-inline">
-      <!-- Add Service -->
-      <% service.forEach(service => { %>
-        <input class="form-check-input" type="checkbox" name="service" id="<%= service._id%>" value="<%= service._id %>">
-        <label class="form-check-label" for="<%= service._id%>">
-          <%= service.name %>
-        </label>
-      <% }) %> 
+      
+        <div class="form-row">
+          <div class="form-group col-md-6" >
+            <label for="cast">Cast:</label>
+            <input type="text" class="form-control" id="cast" name="cast" placeholder="Cast"/>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="director">Director:</label>
+            <input type="text" class="form-control" id="director" name="director" placeholder="Director"/>
+          </div>
         </div>
-      </div>
-    
-      <div class="form-row">
-        <div class="form-group col-md-6" >
-          <label for="cast">Cast:</label>
-          <input type="text" class="form-control" id="cast" name="cast" placeholder="Cast"/>
+      
+        <div class="form-group">
+          <label for="newSynopsis">Synopsis:</label>
+          <textarea class="form-control" id="newSynopsis" name="synopsis" rows="3"></textarea>
         </div>
-        <div class="form-group col-md-6">
-          <label for="director">Director:</label>
-          <input type="text" class="form-control" id="director" name="director" placeholder="Director"/>
-        </div>
-      </div>
-    
-      <div class="form-group">
-        <label for="newSynopsis">Synopsis:</label>
-        <textarea class="form-control" id="newSynopsis" name="synopsis" rows="3"></textarea>
-      </div>
-    
-    
-      <button type="submit" class="btn btn-primary red-button">Save:</button>
-    
-    </form>
+      
+        <button type="submit" class="btn btn-primary red-button">Save:</button>
+      
+      </form>
+    </div>
     <%- include('../partials/footer') %>
   </body>
 </html>

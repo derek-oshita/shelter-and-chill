@@ -347,6 +347,30 @@ nav.navbar {
     border-color: white;
 }
 
+.movie-new-container{
+    height: 85vh;
+}
+
+.show-new-container{
+    height: 85vh;
+}
+
+.service-new-container{
+    height: 85vh;
+}
+
+/* -----------------EDIT FORM------------------- */
+.movie-edit-container{
+    height: 85vh;
+}
+
+.show-edit-container{
+    height: 85vh;
+}
+
+.service-edit-container{
+    height: 85vh;
+}
 
 
 

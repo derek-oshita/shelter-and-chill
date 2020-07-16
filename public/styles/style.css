@@ -275,6 +275,17 @@ nav.navbar {
 .navbar-brand{
     color: rgb(150, 226, 217);
 }
+/* -----------------NEW FORM------------------- */
+.red-button {
+    
+    background-color: #e71d36;
+    margin-bottom: 15px;
+    border-color: white;
+}
+
+
+
+
 
 /* -----------------ADD FAVS------------------- */
 

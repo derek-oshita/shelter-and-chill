@@ -129,10 +129,6 @@ li {
 
 /* Movie Details */
 
-#movie-show-title {
-    font-size: 50px; 
-}
-
 #movie-details-container {
     display: flex; 
     justify-content: space-around;
@@ -399,8 +395,8 @@ nav.navbar {
   }
   
   .title {
-    color: grey;
-    font-size: 18px;
+    font-size: 25px;
+    text-decoration: underline; 
   }
   
   p button {
@@ -429,20 +425,37 @@ nav.navbar {
     color: white; 
 }
 
-/* ----------------- Movies Carousel ------------------- */
-
+/* ----------------- Carousel ------------------- */
 
 #carousel-container {
     height: 70vh;
 }
 
+/* Swipe Left / Right */
+
 #carouselExampleControls {
     height: 70vh; 
 }
 
-/* #carousel-item active {
-    height: 50vh; 
-} */
+.carousel-control-next {
+    width: 3vw; 
+}
+
+.carousel-control-next-icon {
+    height: 10vh; 
+    width: 10vw; 
+    margin: 200px 0 0 0; 
+}
+
+.carousel-control-prev {
+    width: 3vw; 
+}
+
+.carousel-control-prev-icon {
+    height: 10vh; 
+    width: 10vw; 
+    margin: 200px 0 0 0; 
+}
 
 .carousel-inner {
     height: 100vh; 
@@ -463,15 +476,10 @@ nav.navbar {
 /* Big Grey Box  */
 
 .carousel-item {
-    /* display: flex; 
-    justify-content: center;
-    align-items: center; */
     height: 100%;
     padding: 1px;
     background-color: #40515D;
-    /* height: 100%; */
     height: 70vh; 
-    /* display: flex;  */
     justify-content: center;
 }
 
@@ -496,7 +504,7 @@ nav.navbar {
     padding: 25px;
 }
 
-/* Subsequent Slides - Created Movies */
+/* Subsequent Slides - Created Movies/Shows */
 
 /* Container for card */
 .carousel-card {

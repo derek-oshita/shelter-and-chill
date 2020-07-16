@@ -516,15 +516,15 @@ nav.navbar {
     margin: 0px 0px 0px 100px; 
 }
 
-/* Add New Movie Button */
+/* Add New Button */
 
-#add-new-movie-container {
+#add-new-container {
     height: 8vh; 
     display: flex; 
     justify-content: center;
     align-items: center;
 }
 
-#add-new-movie-button {
+#add-new-button {
     width: 8vw; 
 }

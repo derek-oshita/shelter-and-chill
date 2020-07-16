@@ -5,36 +5,59 @@
     <%- include('../partials/header') %>
    
     <form action="/movies/<%=movie.id%>?_method=PUT" method="POST">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" value="<%= movie.name %>"/>
 
-        <label for="genre">Genre</label>
-        <input type="text" id="genre" name="genre" value="<%= movie.genre %>"/>
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" name="name" value="<%= movie.name %>"/>
+        </div>
+      </div>
+    
+      <div class="form-row">
+        <div class="form-group col-md-6" >
+          <label for="genre">Genre</label>
+          <input type="text" class="form-control" id="genre" name="genre" value="<%= movie.genre %>"/>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="imgUrl">Image Url</label>
+          <input type="text" class="form-control" id="imgUrl" name="imgUrl" value="<%= movie.imgUrl %>"/>
+        </div>
+      </div>
+    
+      <div class="form-group">
+        <div class="form-check form-check-inline">
+          <!-- Change Service Providers -->
+          <% service.forEach (service => {%>
+            <input class="form-check-input" value ="<%=service._id%>" type="checkbox" name="service" id="<%=service._id%>"
+            <% for (let i = 0; i < movie.service.length; i++) { %>
+              <% if (service._id.toString() === movie.service[i].toString()) {%>
+                checked>
+                <%}}%>
+            <label class="form-check-label"for="<%=service._id%>"><%=service.name%></label>  
+          <%})%>
+        </div>
+      </div>
+    
+    
+      <div class="form-row">
+        <div class="form-group col-md-6" >
+          <label for="cast">Cast</label>
+          <input type="text" class="form-control" id="cast" name="cast" value="<%= movie.cast %>"/>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="director">Director</label>
+          <input type="text" class="form-control" id="director" name="director" value="<%= movie.director %>"/>
+        </div>
+      </div>
+    
+      <div class="form-group">
+        <label for="newSynopsis">Synopsis</label>
+        <textarea class="form-control" id="newSynopsis" name="synopsis" rows="3" ><%= movie.synopsis %> </textarea>
+      </div>
+    
+    
+      <button type="submit" class="btn btn-primary red-button">Save</button>
 
-        <label for="cast">Cast</label>
-        <input type="text" id="cast" name="cast" value="<%= movie.cast %>"/>
-
-        <label for="director">Director</label>
-        <input type="text" id="director" name="director" value="<%= movie.director %>"/>
-
-
-        <!-- Change Service Providers -->
-        <% service.forEach (service => {%>
-          <label for="<%=service._id%>"><%=service.name%></label>
-          <input value ="<%=service._id%>" type="checkbox" name="service" id="<%=service._id%>"
-          <% for (let i = 0; i < movie.service.length; i++) { %>
-            <% if (service._id.toString() === movie.service[i].toString()) {%>
-              checked>
-          <%}%>
-        <%}})%>
-
-        <label for="imgurl">Image Url</label>
-        <input type="text" id="imgurl" name="imgUrl" value="<%= movie.imgUrl %>"/>
-
-        <label for="synopsis">Synopsis</label>
-        <input type="text" id="synopsis" name="synopsis" value="<%= movie.synopsis %>"/>
-        
-        <button type="submit">Save</button>
     </form>
 
     <%- include('../partials/footer') %>

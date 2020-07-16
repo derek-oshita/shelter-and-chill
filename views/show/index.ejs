@@ -9,23 +9,59 @@
           Chill shows...
       </h2>
     </section>
-    <div>
-      <% show.forEach((showEl) => { %>
-        <a href="/shows/<%= showEl._id %>">
-          <div style="display: inline-block;">
-
-            <img src="<%= showEl.imgUrl%>" alt="" class="card">
-            <!-- <h4><%= showEl.name %></h4> -->
-            
+     <!-- Carousel Starts Here -->
+     <div id="carousel-container">
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <!-- First Active Item -->
+            <div class="carousel-item active">
+              <!-- Top Rows for First Slide -->
+              <div class="row row-cols-1 row-cols-md-3 align-items-center c-item1 c-item-row" id="first-image-container">
+                <!-- Custom Container for First Slide -->
+                <div id="first-slide-container">
+                  <img id="first-slide" src="https://mcdn.wallpapersafari.com/medium/60/39/2K7N8n.jpg">
+                </div>
+              </div>
+            </div>
+          <!-- Carousel Cards -->
+            <% let cards = [] %>
+            <% for(i = 0; i<show.length; i++) { %>
+              <% cards.push(show[i]) %>
+              <% if((i+1) % 6 === 0) {%>
+                <!-- if i === 6 show avtive  -->
+                <!-- include ('carousel-item-active') -->
+                <!-- else regular-->
+                <%- include('carousel-item', {shows6: cards}) %>
+                <% cards = [] %>
+                <% } else if(i === show.length-1) {%>
+                  <%- include('carousel-item', {shows6: cards}) %>
+                  <% } %>
+            <%};%>
+            <!-- Carousel Cards End Here -->
           </div>
-        </a>
-      <% }) %>
-      <br>
-      <a href="/shows/new">
-        <button>Add new show</button>
-      </a>
+        </div>
+      </div>        
     </div>
-
+    <!-- Carousel Controls -->
+    <!-- Slide left  -->
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <!-- Slide right -->
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+        <!-- Add New Show -->
+        <section id="add-new-container">
+          <a href="/shows/new">
+            <button id="add-new-button">Add Show</button>
+          </a>
+        </section>
+      </div>
+      <!-- Footer -->
     <%- include('../partials/footer') %>
   </body>
 </html>

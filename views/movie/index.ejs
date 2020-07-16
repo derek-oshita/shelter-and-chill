@@ -15,144 +15,25 @@
     
         <div class="carousel-inner">
           <!-- Slide -->
-          <div class="carousel-item active ">
+          <div class="carousel-item active">
             <div class="row row-cols-1 row-cols-md-3 align-items-center c-item1 c-item-row">
-    
-              <div class="col mb-4">
-                <div class="card">
-                  <div class="card-body">
-                  </div>
-                </div>
-              </div>
-      
-              <div class="col mb-4">
-                <div class="card">
-                  <div class="card-body">
-                  </div>
-                </div>
-              </div>
-      
-              <div class="col mb-4">
-                <div class="card">
-                  <div class="card-body">
-                  </div>
-                </div>
-              </div>
-                        
-              <div class="col mb-4">
-                <div class="card">
-                  <div class="card-body">
-                  </div>
-                </div>
-              </div>
-                        
-              <div class="col mb-4">
-                <div class="card">
-                  <div class="card-body">
-                  </div>
-                </div>
-              </div>
-                        
-              <div class="col mb-4">
-                <div class="card">
-                  <div class="card-body">
-                  </div>
-                </div>
-              </div> 
-              
+              test
             </div>
           </div>
-          <!-- slide 2 -->
-          <div class="carousel-item">
-            <div class="row row-cols-1 row-cols-md-3 align-items-center c-item2 c-item-row">
-              <div class="col mb-4">
-                <div class="card">
-                  <div class="card-body">
-                  </div>
-                </div>
-              </div>
-      
-              <div class="col mb-4">
-                <div class="card">
-                  <div class="card-body">
-                  </div>
-                </div>
-              </div>
-      
-              <div class="col mb-4">
-                <div class="card">
-                  <div class="card-body">
-                  </div>
-                </div>
-              </div>
-                        
-              <div class="col mb-4">
-                <div class="card">
-                  <div class="card-body">
-                  </div>
-                </div>
-              </div>
-                        
-              <div class="col mb-4">
-                <div class="card">
-                  <div class="card-body">
-                  </div>
-                </div>
-              </div>
-                        
-              <div class="col mb-4">
-                <div class="card">
-                  <div class="card-body">
-                  </div>
-                </div>
-              </div> 
-            </div>
-          </div>
-          <!-- slide 2 -->
-          <div class="carousel-item">
-            <div class="row row-cols-1 row-cols-md-3 align-items-center c-item3 c-item-row">
-              <div class="col mb-4">
-                <div class="card">
-                  <div class="card-body">
-                  </div>
-                </div>
-              </div>
-      
-              <div class="col mb-4">
-                <div class="card">
-                  <div class="card-body">
-                  </div>
-                </div>
-              </div>
-      
-              <div class="col mb-4">
-                <div class="card">
-                  <div class="card-body">
-                  </div>
-                </div>
-              </div>
-                        
-              <div class="col mb-4">
-                <div class="card">
-                  <div class="card-body">
-                  </div>
-                </div>
-              </div>
-                        
-              <div class="col mb-4">
-                <div class="card">
-                  <div class="card-body">
-                  </div>
-                </div>
-              </div>
-                        
-              <div class="col mb-4">
-                <div class="card">
-                  <div class="card-body">
-                  </div>
-                </div>
-              </div> 
-            </div>
+          <% let cards = [] %>
+          <% for(i = 0; i<movie.length; i++) { %>
+            <% cards.push(movie[i]) %>
+            <% if((i+1) % 6 === 0) {%>
+              <!-- if i === 6 show avtive  -->
+              <!-- include ('carousel-item-active') -->
+              <!-- else regular-->
+              <%- include('carousel-item', {movies6: cards}) %>
+              <% cards = [] %>
+              <% } else if(i === movie.length-1) {%>
+                <%- include('carousel-item', {movies6: cards}) %>
+                <% } %>
+          <% }; %>
+           
           </div>
         </div>
       </div>

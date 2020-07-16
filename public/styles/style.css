@@ -279,11 +279,7 @@ nav.navbar {
 /* -----------------ADD FAVS------------------- */
 
 .add-buttons-container{
-    display: flex;
-    align-items: center;
-    width: 70vw;
-    display: block;
-    justify-content: center;
+    width: 100%;
 }
 .add {
     height: 50px;

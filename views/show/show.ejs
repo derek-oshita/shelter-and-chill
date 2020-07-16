@@ -48,6 +48,7 @@
       <div id="show-details-container">
         <!-- Genre, Cast, Director -->
         <div id="show-details">
+          <p class="title"><%= show.name %></p>
           <p><%= (`Genre: ${show.genre}`) %></p>
           <p><%= (`Cast: ${show.cast}`) %></p>
           <p><%= (`Director: ${show.director}`) %></p>
@@ -75,6 +76,9 @@
           <a href="/shows/<%= show._id %>/edit">
             <button>Edit Show</button>
           </a>
+          <!-- Divider -->
+          <div class="divider">
+          </div>
           <!-- Delete Button -->
           <form style="display: inline;" action="/shows/<%= show._id%>?_method=DELETE" method="POST">
             <button type="submit">Delete Show</button>

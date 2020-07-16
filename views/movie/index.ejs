@@ -6,42 +6,43 @@
     <!-- Catch Phrase Container -->
       <section id="catch-phrase-container-partial">
           <h2 id="catch-phrase-partial" class="animate__animated animate__fadeIn">
-              Chill movies... <%= movie.length %>
+              Chill movies... 
           </h2>
       </section>
-      <!-- Movie Cards -->
-    <div>
+  <!-- Carousel Starts Here -->
+    <div id="carousel-container">
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-    
         <div class="carousel-inner">
-          <!-- Slide -->
-          <div class="carousel-item active">
-            <div class="row row-cols-1 row-cols-md-3 align-items-center c-item1 c-item-row">
-              test
+          <!-- First Active Item -->
+            <div class="carousel-item active">
+              <!-- Top Rows for First Slide -->
+              <div class="row row-cols-1 row-cols-md-3 align-items-center c-item1 c-item-row" id="first-image-container">
+                <!-- Custom Container for First Slide -->
+                <div id="first-slide-container">
+                  <img id="first-slide" src="https://www.wallpaperup.com/uploads/wallpapers/2015/12/12/859165/786c3dbc95c87135e16451d2013cb6c5-1000.jpg">
+                </div>
+              </div>
             </div>
-          </div>
-          <% let cards = [] %>
-          <% for(i = 0; i<movie.length; i++) { %>
-            <% cards.push(movie[i]) %>
-            <% if((i+1) % 6 === 0) {%>
-              <!-- if i === 6 show avtive  -->
-              <!-- include ('carousel-item-active') -->
-              <!-- else regular-->
-              <%- include('carousel-item', {movies6: cards}) %>
-              <% cards = [] %>
-              <% } else if(i === movie.length-1) {%>
+          <!-- Carousel Cards -->
+            <% let cards = [] %>
+            <% for(i = 0; i<movie.length; i++) { %>
+              <% cards.push(movie[i]) %>
+              <% if((i+1) % 6 === 0) {%>
+                <!-- if i === 6 show avtive  -->
+                <!-- include ('carousel-item-active') -->
+                <!-- else regular-->
                 <%- include('carousel-item', {movies6: cards}) %>
-                <% } %>
-          <% }; %>
-           
+                <% cards = [] %>
+                <% } else if(i === movie.length-1) {%>
+                  <%- include('carousel-item', {movies6: cards}) %>
+                  <% } %>
+            <%};%>
+            <!-- Carousel Cards End Here -->
           </div>
         </div>
-      </div>
-          
-          
-          
-            
-        </div>
+      </div>        
+    </div>
+    <!-- Carousel Controls -->
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="sr-only">Previous</span>
@@ -51,22 +52,14 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
-      <% movie.forEach((movieEl) => { %>
-        <a href="/movies/<%= movieEl._id %>">
-          <div style="display: inline-block;">
-
-            <img src="<%= movieEl.imgUrl%>" alt="" class="card">
-            <!-- <h4><%= movieEl.name %></h4> -->
-            
-          </div>
+    <!-- Add New Movie -->
+      <section id="add-new-movie-container">
+        <a href="/movies/new">
+          <button id="add-new-movie-button">Add Movie</button>
         </a>
-      <% }) %>
-      <br>
-      <a href="/movies/new">
-        <button>Add new movie</button>
-      </a>
+      </section>
     </div>
-
+    <!-- Footer -->
     <%- include('../partials/footer') %>
   </body>
 </html>

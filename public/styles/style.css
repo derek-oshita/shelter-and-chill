@@ -26,6 +26,40 @@ body {
     align-items: center;
 }
 
+.movie-show-btn{
+    margin: 10px 0px 10px 12px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-color: white;
+    color: white;
+    background-color: #40515E;
+}
+
+.show-show-btn{
+    margin: 10px 0px 10px 12px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-color: white;
+    color: white;
+    background-color: #40515E;
+}
+
+.main-btn{
+    margin: 10px 0px 10px 12px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-color: white;
+    color: white;
+    background-color: #40515E;
+}
+
+
 /* #nav-container {
     width: 50vw; 
     display: flex; 
@@ -291,6 +325,12 @@ li {
     height: 40px; 
     font-size: 22px; 
     font-family: 'Source Code Pro', monospace;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-color: white;
+    color: white;
+    background-color: #40515E;
 }
 
 .divider {
@@ -347,6 +387,30 @@ nav.navbar {
     border-color: white;
 }
 
+.movie-new-container{
+    height: 85vh;
+}
+
+.show-new-container{
+    height: 85vh;
+}
+
+.service-new-container{
+    height: 85vh;
+}
+
+/* -----------------EDIT FORM------------------- */
+.movie-edit-container{
+    height: 85vh;
+}
+
+.show-edit-container{
+    height: 85vh;
+}
+
+.service-edit-container{
+    height: 85vh;
+}
 
 
 
@@ -354,8 +418,15 @@ nav.navbar {
 /* -----------------ADD FAVS------------------- */
 
 .add-buttons-container{
+    height: 80vh;
     width: 100%;
 }
+
+.add-buttons {
+    align-items: center;
+    width: 100vw;
+}
+
 .add {
     height: 50px;
     width: 60vw;
@@ -364,10 +435,12 @@ nav.navbar {
     border-radius: 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     align-items: center;
+    border-color: white;
+    color: white;
 }
 
 .add-movie {
-    background-color: #7F8B92;
+    background-color: #40515E;
 }
 
 .add-show {
@@ -375,7 +448,7 @@ nav.navbar {
 }
 
 .add-service {
-    background-color: #BEC5C7;
+    background-color: #40AECF;
 }
 
 /* -----------------ABOUT------------------- */
@@ -386,10 +459,10 @@ nav.navbar {
     justify-content: center;
 }
 .about-card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 350px;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.5);
+    max-width: 380px;
     min-width: 250px;
-    margin: 0px 25px;
+    margin: 3vh 25px 4vh ;
     text-align: center;
     background-size: cover;
   }
@@ -524,7 +597,7 @@ nav.navbar {
     margin: 0px 0px 0px 100px; 
 }
 
-/* Add New Button */
+/* Add New Button for index pages */
 
 #add-new-container {
     height: 8vh; 
@@ -535,4 +608,10 @@ nav.navbar {
 
 #add-new-button {
     width: 8vw; 
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-color: white;
+    color: white;
+    background-color: #40515E;
 }

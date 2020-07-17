@@ -29,14 +29,14 @@
           <div id="show-service-button-container">
             <!-- Delete Button (for our convenience)-->
                 <form style="display: inline;" action="/services/<%=service._id%>?_method=DELETE" method="POST">
-                  <button class="buttons">Delete</button>
+                  <button class="service-show-btn buttons">Delete</button>
                 </form>
             <!-- Divider -->
             <div class="divider">
             </div>
             <!-- Edit Button -->
                 <a href="/services/<%=service._id%>/Edit">
-                  <button class="buttons">Edit</button>
+                  <button class=" service-show-btn buttons">Edit</button>
                 </a>
           </div>
         </main>

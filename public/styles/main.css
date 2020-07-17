@@ -35,7 +35,7 @@
 #movie-container {
     height: 70vh; 
     width: 33vw; 
-    background-image: url("https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/107669421_3316466751726258_4331963360288332491_n.jpg?_nc_cat=109&_nc_sid=e007fa&_nc_ohc=8tONBA44eWwAX8XXxZF&_nc_ht=scontent-sjc3-1.xx&oh=5dd94e0f31cb0741fa45e34f19acc8a8&oe=5F323218");
+    background-image: url(/images/dark-knight.jpg);
     background-size: cover;
     border: 2px solid white; 
 }
@@ -43,7 +43,7 @@
 #show-container {
     height: 70vh; 
     width: 33vw; 
-    background-image: url("https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/107846258_3316467715059495_6325520322193115497_n.jpg?_nc_cat=107&_nc_sid=e007fa&_nc_ohc=UInNa9VMAvcAX9W7Fqe&_nc_ht=scontent-sjc3-1.xx&oh=d7631f07af8006b18fb4db0516fbab92&oe=5F35DCD0");
+    background-image: url(/images/tokyo_ghoul.jpg);
     background-size: cover;
     border: 2px solid white; 
 }
@@ -51,7 +51,7 @@
 #service-container {
     height: 70vh; 
     width: 33vw; 
-    background-image: url("https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/107804353_3316467248392875_3412387710153792460_n.jpg?_nc_cat=104&_nc_sid=e007fa&_nc_ohc=TzkG2eAyZd8AX_SJPjR&_nc_ht=scontent-sjc3-1.xx&oh=15e01a514340f4226dc1db110e201c46&oe=5F3358B3");
+    background-image: url(/images/netflix1.jpg);
     background-size: cover;
     border: 2px solid white; 
 }

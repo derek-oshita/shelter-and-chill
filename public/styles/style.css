@@ -126,7 +126,7 @@ li {
     align-items: center;
     /* Image found on pinterest: https://www.pinterest.com/pin/430023464396519373/ */
     /* background-image: url("https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-0/p640x640/108210711_3315306321842301_3135188879402337733_o.jpg?_nc_cat=104&_nc_sid=e007fa&_nc_ohc=FSX0wa9UjhcAX-xUdx4&_nc_ht=scontent-sjc3-1.xx&_nc_tp=6&oh=eb32fc52b968b01c259b17b072d136e5&oe=5F328260");  */
-    background-image: url("https://crestar.com.sg/wp-content/uploads/2018/04/Curtain_bg.jpg"); 
+    background-image: url(/images/curtains_1.jpg); 
     background-size: cover;
     height: 45vh; 
 }
@@ -207,7 +207,7 @@ li {
     align-items: center;
     /* Image found on pinterest: https://www.pinterest.com/pin/430023464396519373/ */
     /* background-image: url("https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-0/p640x640/108210711_3315306321842301_3135188879402337733_o.jpg?_nc_cat=104&_nc_sid=e007fa&_nc_ohc=FSX0wa9UjhcAX-xUdx4&_nc_ht=scontent-sjc3-1.xx&_nc_tp=6&oh=eb32fc52b968b01c259b17b072d136e5&oe=5F328260");  */
-    background-image: url("https://crestar.com.sg/wp-content/uploads/2018/04/Curtain_bg.jpg"); 
+    background-image: url(/images/curtains_1.jpg); 
     background-size: cover;
     height: 45vh; 
 }

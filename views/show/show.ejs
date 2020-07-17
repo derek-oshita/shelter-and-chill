@@ -72,14 +72,14 @@
         <!-- Edit Button -->
         <div id="edit-delete-button-container">
           <a href="/shows/<%= show._id %>/edit">
-            <button>Edit Show</button>
+            <button class="show-show-btn">Edit Show</button>
           </a>
           <!-- Divider -->
           <div class="divider">
           </div>
           <!-- Delete Button -->
           <form style="display: inline;" action="/shows/<%= show._id%>?_method=DELETE" method="POST">
-            <button type="submit">Delete Show</button>
+            <button class="show-show-btn" type="submit">Delete Show</button>
           </form>
         </div>
 

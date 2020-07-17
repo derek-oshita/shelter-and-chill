@@ -14,8 +14,6 @@ const serviceCtrl = require('./controllers/serviceController');
 // Show 
 const showCtrl = require('./controllers/showController'); 
 
-// API
-const apiCtrl = require('./controllers/apiController')
 
 // --- View Engine --- // 
 app.set('view engine', 'ejs'); 
@@ -57,8 +55,7 @@ app.use('/movies', movieCtrl);
 app.use('/services', serviceCtrl); 
 // Show 
 app.use('/shows', showCtrl); 
-// API 
-app.use('/api/v1', apiCtrl); 
+
 
 // 404 Not Found
 app.get('*', (req, res) => {

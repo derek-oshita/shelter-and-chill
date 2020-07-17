@@ -10,24 +10,25 @@
     <%- include('../partials/header') %>
    
     <form action="/services" method="POST">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name"/>
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <label for="name">Name:</label>
+          <input type="text" class="form-control" id="name" name="name" placeholder="Streaming Service Name"/>
+        </div>
+      </div>
 
-        <label for="price">Monthly Subscription:</label>
-        <input type="number" id="price" name="price"/>
-
-        <label for="imgUrl">Image URL:</label>
-        <input type="text" id="imgUrl" name="imgUrl"/>
-
-        <!-- <label for="movie">Movie</label>
-        <select name="movieId" id="movie">
-        </select>
-
-        <label for="show">Show</label>
-        <select name="showId" id="show">
-        </select> -->
+      <div class="form-row">
+        <div class="form-group col-md-6" >
+          <label for="price">Monthly Subscription:</label>
+          <input type="text" class="form-control" id="price" name="price" placeholder="Price rounded to whole number"/>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="imgUrl">Image Url:</label>
+          <input type="text" class="form-control" id="imgUrl" name="imgUrl" placeholder="Image URL "/>
+        </div>
+      </div>
  
-        <button type="submit">Save</button>
+        <button type="submit" class="btn btn-primary red-button">Save</button>
     </form>
 
     <%- include('../partials/footer') %>

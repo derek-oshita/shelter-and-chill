@@ -1,6 +1,6 @@
 # Shelter and Chill
 Unit Two Full Stack Project
----
+
 
 ## Index:
 
@@ -9,27 +9,46 @@ Unit Two Full Stack Project
 - [ERD](#Entity-Relationship-Diagram)
 - [Wireframes](#wireframes)
 - [User Stories](#User-Stories)
-- [Credits](#credits)
+- [Thanks](#Special-Thanks)
 
---- 
 
 ## Overview
-Lemon drops macaroon jelly. Soufflé fruitcake apple pie. Donut oat cake powder lemon drops biscuit. Tiramisu sweet icing chocolate cake cake. Icing marshmallow gummies cake. Jelly beans cake bonbon croissant wafer fruitcake. Gingerbread chocolate candy canes marzipan sugar plum oat cake toffee. Tiramisu fruitcake liquorice topping ice cream marshmallow sweet powder wafer. Candy chocolate pastry. Dragée gummi bears halvah marshmallow gingerbread pie. Donut gummies halvah sugar plum chocolate sugar plum. Oat cake tart cheesecake marshmallow jelly-o carrot cake. Chocolate cake chupa chups cookie pudding apple pie. Halvah wafer chocolate cake cake chocolate sugar plum.
----
+
+Have you ever wanted to watch something but didn't know where to find it, what you actually wanted to watch, or what you can watch with the services you are already subscribed to? Well my friends you are in luck! **Shelter & Chill** was made to assist people who are just as lost as you!
+
 
 ## Link to page
+
 https://www.shelterAndChill.com
----
+
+
+## Technologies & Libraries Used
+
+* Mongoose
+* Express
+* Node
+* EJS 
+* MongoDB
+* CSS
+* JavaScript
+* Jquery
+* Popper.js
+* Bootstrap
+* Cloudflare
+* Google Fonts
+* HTML
 
 ## Entity Relationship Diagram
+
 ![ERD](./assets/ERD.jpeg)
----
+
 
 ## Wireframes
+
 https://www.figma.com/proto/Xt6sAga0HibD1OUEppbyTp/Untitled?node-id=6%3A211&scaling=min-zoom
 
-Caramels pastry gingerbread fruitcake oat cake topping marshmallow candy canes. Marshmallow tart wafer croissant cheesecake. Caramels chocolate cake powder jelly toffee. Lemon drops sugar plum sugar plum gummi bears apple pie gummies apple pie.
----
+![Wireframes](./assets/wireframe.jpg)
+
 
 ## User Stories
 
@@ -44,12 +63,28 @@ If the user clicks the titles page, it will display (in descending order) a list
 If the user clicks the services page, it will also display in (descending order) a list of streaming services that users have added to the database. Each service will include information on name, price, and rating. When clicked on, it will display a list of titles that can be watched on that service. 
 
 For the create page, a form will be available where the user can enter their own inputs for either a title or a streaming service. A user can delete and edit a title, but only edit the streaming service as we don’t want them to delete all titles associated with that service. 
----
 
-## Credits
+## Planned Features
 
-Bootstrap
-EJS
-Mongoose
-Express
-and Co.
+
+* Up vote and Down vote Feature
+* Search Feature
+* Login
+* API call to http://www.omdbapi.com/ **Open movie Data Base**
+
+## Special Thanks
+
+
+* Jimmy
+* Zach
+* Adonis
+* Yulia
+* Michael
+* Kenny
+* Tony
+* Melisa
+* Allison & Dani
+* Kevin Bacon
+
+
+

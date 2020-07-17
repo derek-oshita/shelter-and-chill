@@ -4,9 +4,9 @@ const router = express.Router();
 
 // Current path = '/movies'
 
-// --- Routes --- // 
+//--------------------------/ROUTES/--------------------------//
 
-// All Movies 
+// *********All Movies********** 
 router.get('/', (req, res) => {
     db.Movie.find({}, (err, allMovies) => {
         if (err) return console.log(err); 
@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
     })
 }); 
 
-// New Movie
+// **********New Movie**********
 router.get('/new', (req, res) => {
     db.Service.find({}, (err, allServices) => {
         if (err) return console.log(err); 
@@ -27,7 +27,7 @@ router.get('/new', (req, res) => {
     })
 }); 
 
-// Create Movie (Thanks, Michael!)
+// **********Create Movie (Thanks, Michael!)**********
 router.post('/', (req, res) => {
     console.log(req.body)
     db.Movie.create(req.body, (err, newMovie) => {
@@ -41,7 +41,7 @@ router.post('/', (req, res) => {
     })
 })
 
-// Show Movie 
+// **********Show Movie********** 
 router.get('/:id', (req, res) => {
     console.log(req.params.id)
     db.Movie.findById(req.params.id)
@@ -55,31 +55,7 @@ router.get('/:id', (req, res) => {
     }) 
 }); 
 
-// // Working Edit Movie (without services relationship)
-// router.get('/:id/edit', (req, res) => {
-//     db.Movie.findById(req.params.id, (err, movie) => {
-//         if (err) return console.log(err)
-//         res.render('movie/edit', {
-//             movie: movie
-//         })
-//     })
-// }); 
-
-// // Working Update Movie (without services relationship)
-// router.put('/:id', (req, res) => {
-//     console.log('Updated: ', req.body)
-//     db.Movie.findByIdAndUpdate(
-//         req.params.id, 
-//         req.body, 
-//         {new: true},
-//         (err, movie) => {
-//             if(err) return console.log(err); 
-//             res.redirect('/movies')
-//         }
-//      )
-// }); 
-
-// Edit Movie
+// **********Edit Movie**********
 router.get('/:id/edit', (req, res) => {
     console.log(req.params.id)
     db.Service.find({}, (err, allServices) => {
@@ -98,7 +74,7 @@ router.get('/:id/edit', (req, res) => {
     })
 }); 
 
-// Movie Update (THANKS YULIA!!!)
+// **********Movie Update (THANKS YULIA!!!)**********
 router.put('/:id/', (req, res) => {
     // reassigns service property to empty array
     if (!req.body.service) {
@@ -148,5 +124,5 @@ router.delete('/:id', (req, res) => {
     })
 })
 
-// --- Export Router --- // 
+//--------------------------/EXPORT ROUTER/--------------------------//
 module.exports = router; 

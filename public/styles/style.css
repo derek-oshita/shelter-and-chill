@@ -1,6 +1,5 @@
 /* Universal */
 * {
-    /* font-family:'Overpass', sans-serif; */
     font-family: 'Source Code Pro', monospace;
     margin: 0; 
     padding: 0; 
@@ -26,6 +25,7 @@ body {
     align-items: center;
 }
 
+/* -----------------MAIN BUTTONS------------------- */
 .movie-show-btn{
     margin: 10px 0px 10px 12px;
     padding-left: 5px;
@@ -58,14 +58,6 @@ body {
     color: white;
     background-color: #40515E;
 }
-
-
-/* #nav-container {
-    width: 50vw; 
-    display: flex; 
-    justify-content: flex-end;
-    align-items: center;
-} */
 
 .btn-group {
     margin: 0px 15px 0px 0px; 
@@ -119,9 +111,7 @@ li {
     color: white; 
 }
 
-
-/* Show page for movies */
-
+/* -----------------Show page for movies------------------- */
 /* Image */
 
 #show-movie-image-container {
@@ -152,12 +142,12 @@ li {
     border: 1px solid #323232; 
     /* gradient by uiGradients */
     background-color: #40515E;
-    height: 10vh; 
+    height: 4vh; 
 }
 
 .counters {
     width: 20vw; 
-    height: 10vh; 
+    height: 4vh; 
     display: flex; 
     justify-content: center;
     align-items: center;
@@ -169,15 +159,15 @@ li {
     display: flex; 
     justify-content: space-around;
     align-items: center; 
-    height: 35vh; 
+    height: 27vh; 
 }
 
 #movie-details, #synopsis {
     width: 50vw; 
-    height: 35vh; 
+    height: 27vh; 
     border: 2px solid #323232; 
     text-align: center; 
-    padding: 10vh 0 10vh 0; 
+    padding: 25px 0 10vh 0; 
 }
 
 /* Streaming Services */
@@ -199,7 +189,7 @@ li {
     justify-content: center;
 }
 
-/* Show page for Shows */
+/* -----------------Show page for Shows------------------- */
 
 /* Image */
 
@@ -229,7 +219,7 @@ li {
     align-items: center;
     border: 1px solid #323232; 
     background-color: #40515E;
-    height: 10vh; 
+    height: 4vh; 
 }
 
 .counters {
@@ -246,15 +236,15 @@ li {
     display: flex; 
     justify-content: space-around;
     align-items: center; 
-    height: 35vh; 
+    height: 27vh; 
 }
 
 #show-details, #synopsis {
     width: 50vw; 
-    height: 35vh; 
+    height: 27vh; 
     border: 2px solid #323232; 
     text-align: center; 
-    padding: 80px 0px 0px 0px; 
+    padding: 30px 0px 0px 0px; 
 }
 
 /* Streaming Services */
@@ -602,7 +592,7 @@ nav.navbar {
     margin: 0px 0px 0px 100px; 
 }
 
-/* Add New Button for index pages */
+/* ----------------- Add New Button for index pages ------------------- */
 
 #add-new-container {
     height: 8vh; 

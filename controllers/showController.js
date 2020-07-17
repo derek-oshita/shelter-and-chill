@@ -4,9 +4,9 @@ const router = express.Router();
 
 // Current path = '/shows'
 
-// --- Routes --- // 
+//--------------------------/ROUTES/--------------------------//
 
-// All Shows 
+// **********All Shows********** 
 router.get('/', (req, res) => {
     db.Show.find({}, (err, allShows) => {
         if (err) return console.log(err); 
@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
     })
 }); 
 
-// New Show
+// **********New Show**********
 router.get('/new', (req, res) => {
     db.Service.find({}, (err, allServices) => {
         if (err)return console.log(err);
@@ -27,7 +27,7 @@ router.get('/new', (req, res) => {
     })
 }); 
 
-// Create Show (Thanks, Michael!)
+// **********Create Show (Thanks, Michael!)**********
 router.post('/', (req, res) => {
     console.log(req.body)
     db.Show.create(req.body, (err, newShow) =>{
@@ -41,7 +41,7 @@ router.post('/', (req, res) => {
     })
 }); 
 
-// Show Show Fasho 
+// **********Show Show Fasho********** 
 router.get('/:id', (req, res) => {
     db.Show.findById(req.params.id)
     .populate('service')
@@ -54,31 +54,7 @@ router.get('/:id', (req, res) => {
     }) 
 }); 
 
-// // Edit Show (working without services)
-// router.get('/:id/edit', (req, res) => {
-//     db.Show.findById(req.params.id, (err, show) => {
-//         if (err) return console.log(err)
-//         res.render('show/edit', {
-//             show: show
-//         })
-//     })
-// }); 
-
-// // Update Show (working without services)
-// router.put('/:id', (req, res) => {
-//     console.log('Updated: ', req.body)
-//     db.Show.findByIdAndUpdate(
-//         req.params.id, 
-//         req.body, 
-//         {new: true},
-//         (err, show) => {
-//             if(err) return console.log(err); 
-//             res.redirect('/shows')
-//         }
-//      )
-// }); 
-
-// Edit Show
+// **********Edit Show**********
 router.get('/:id/edit', (req, res) => {
     db.Service.find({}, (err, allServices) => {
         db.Service.findOne({'show': req.params.id})
@@ -96,7 +72,7 @@ router.get('/:id/edit', (req, res) => {
     })
 }); 
 
-// Show Update (THANKS YULIA!!!)
+// **********Show Update (THANKS YULIA!!!)**********
 router.put('/:id/', (req, res) => {
     // reassigns service property to empty array
     if (!req.body.service) {
@@ -131,7 +107,7 @@ router.put('/:id/', (req, res) => {
     res.redirect(`/shows/${req.params.id}`); 
 }) ; 
 
-// Destroy Show 
+// **********Destroy Show********** 
 router.delete('/:id', (req, res) => {
     db.Show.findByIdAndDelete(req.params.id, (err, deletedShow) => {
         if (err) return console.log(err); 
@@ -146,5 +122,5 @@ router.delete('/:id', (req, res) => {
     })
 }); 
 
-// --- Export Router --- // 
+//--------------------------/EXPORT ROUTER/--------------------------//
 module.exports = router; 

@@ -37,6 +37,7 @@ function likeMovie (movie) {
 // Get A Movie
 function getMovie (event) {
     console.log('movie clicked: ', event.target.id)
+    const movieId = event.target.id; 
 }
 
 // Event Listener

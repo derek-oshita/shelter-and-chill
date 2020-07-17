@@ -385,6 +385,7 @@ nav.navbar {
     display: flex;
     justify-content: center;
 }
+
 .about-card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 350px;
@@ -418,7 +419,7 @@ nav.navbar {
     color: black;
   }
   
-    button:hover, a:hover {
+  button:hover, a:hover {
     opacity: 0.7;
   }
 #footer-text {
@@ -456,6 +457,7 @@ nav.navbar {
     width: 10vw; 
     margin: 200px 0 0 0; 
 }
+
 
 .carousel-inner {
     height: 100vh; 

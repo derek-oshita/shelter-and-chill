@@ -19,7 +19,7 @@ Have you ever wanted to watch something but didn't know where to find it, what y
 
 ## Link to page
 
-https://www.shelterAndChill.com
+https://floating-lowlands-00662.herokuapp.com/
 
 
 ## Technologies & Libraries Used

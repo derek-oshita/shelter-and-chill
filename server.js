@@ -1,7 +1,7 @@
 const express = require('express'); 
 const app = express(); 
 const methodOverride = require('method-override'); 
-const PORT = process.env.PORT || 4000; 
+const PORT = process.env.PORT || 3000; 
 
 // --- Controllers --- // 
 
@@ -66,4 +66,5 @@ app.get('*', (req, res) => {
 }); 
 
 // --- Server Listener --- // 
-app.listen(PORT, () => {console.log(`Server is listening on ${PORT}...`)})
+// app.listen(PORT, () => {console.log(`Server is listening on ${PORT}...`)})
+app.listen(process.env.PORT || 3000); 

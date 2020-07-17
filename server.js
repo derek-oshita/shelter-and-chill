@@ -14,6 +14,9 @@ const serviceCtrl = require('./controllers/serviceController');
 // Show 
 const showCtrl = require('./controllers/showController'); 
 
+// API
+const apiCtrl = require('./controllers/apiController')
+
 // --- View Engine --- // 
 app.set('view engine', 'ejs'); 
 
@@ -48,20 +51,19 @@ app.get('/about', (req, res) => {
 app.get('/add', (req, res) => {
     res.render('add/index')
 }); 
-
 // Movie 
 app.use('/movies', movieCtrl); 
-
 // Service
 app.use('/services', serviceCtrl); 
-
 // Show 
 app.use('/shows', showCtrl); 
+// API 
+app.use('/api/v1', apiCtrl); 
 
 // 404 Not Found
-// app.get('*', (req, res) => {
-//     res.send('<h1>404 Page Not Found</h1>')
-// }); 
+app.get('*', (req, res) => {
+    res.send('<h1>404 Page Not Found</h1>')
+}); 
 
 // --- Server Listener --- // 
 app.listen(PORT, () => {console.log(`Server is listening on ${PORT}...`)})

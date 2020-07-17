@@ -5,36 +5,58 @@
     <%- include('../partials/header') %>
    
     <form action="/shows/<%=show._id%>?_method=PUT" method="POST">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" value="<%= show.name %>"/>
+      
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <label for="name">Name:</label>
+          <input type="text" class="form-control" id="name" name="name" value="<%= show.name %>"/>
+        </div>
+      </div>
+      
+      <div class="form-row">
+        <div class="form-group col-md-6" >
+          <label for="genre">Genre:</label>
+          <input type="text" class="form-control" id="genre" name="genre" value="<%= show.genre %>"/>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="imgUrl">Image URL:</label>
+          <input type="text" class="form-control" id="imgUrl" name="imgUrl" value="<%= show.imgUrl %>"/>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <div class="form-check form-check-inline">
+          <!-- Change Service Providers -->
+          <% service.forEach (service => {%>
+            <input class="form-check-input" value ="<%=service._id%>" type="checkbox" name="service" id="<%=service._id%>"
+            <% for (let i = 0; i < show.service.length; i++) { %>
+              <% if (service._id.toString() === show.service[i].toString()) {%>
+                checked>
+                <%}}%>
+            <label class="form-check-label"for="<%=service._id%>"><%=service.name%></label>  
+          <%})%>
+        </div>
+      </div>
+      
+      <div class="form-row">
+        <div class="form-group col-md-6" >
+          <label for="cast">Cast:</label>
+          <input type="text" class="form-control" id="cast" name="cast" value="<%= show.cast %>"/>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="director">Director:</label>
+          <input type="text" class="form-control" id="director" name="director" value="<%= show.director %>"/>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="newSynopsis">Synopsis:</label>
+        <textarea class="form-control" id="newSynopsis" name="synopsis" rows="3" ><%= show.synopsis %> </textarea>
+      </div>
+      
+      
+      <button type="submit" class="btn btn-primary red-button">Save</button>
 
-        <label for="genre">Genre</label>
-        <input type="text" id="genre" name="genre" value="<%= show.genre %>"/>
-
-        <label for="cast">Cast</label>
-        <input type="text" id="cast" name="cast" value="<%= show.cast %>"/>
-
-        <label for="director">Director</label>
-        <input type="text" id="director" name="director" value="<%= show.director %>"/>
-
-        <!-- Change Service Providers -->
-        <% service.forEach (service => {%>
-          <label for="<%=service._id%>"><%=service.name%></label>
-          <input value ="<%=service._id%>" type="checkbox" name="service" id="<%=service._id%>"
-          <% for (let i = 0; i < show.service.length; i++) { %>
-            <% if (service._id.toString() === show.service[i].toString()) {%>
-              checked>
-          <%}%>
-        <%}})%>
-        
-        <!-- showService and service passed from show controller -->
-        <label for="imgurl">Image Url</label>
-        <input type="text" id="imgurl" name="imgurl" value="<%= show.imgUrl %>"/>
-
-        <label for="synopsis">Synopsis</label>
-        <input type="text" id="synopsis" name="synopsis" value="<%= show.synopsis %>"/>
-        
-        <button type="submit">Save</button>
     </form>
 
     <%- include('../partials/footer') %>

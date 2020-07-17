@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head -->
+<%- include('partials/head') %>
+<link rel="stylesheet" href="styles/main.css" >
+<!-- Body -->
+<body id="landing-page-body">
+    <!-- Header -->
+        <%- include('partials/header') %>
+    <!-- Main Section -->
+        <main>
+            <!-- Catch Phrase Container -->
+            <section id="catch-phrase-container">
+                <h2 id="catch-phrase" class="animate__animated animate__fadeIn">
+                    Come chill with us...
+                </h2>
+            </section>
+            <!-- Content Container -->
+            <section id="content-container">
+                <!-- Movie -->
+                <a href="/movies">
+                    <div id="movie-container" class="landing-page-content">
+                    </div>
+                </a>
+                <!-- Show -->
+                <a href="/shows">
+                    <div id="show-container" class="landing-page-content">
+                    </div>
+                </a>
+                <!-- Service -->
+                <a href="/services">
+                    <div id="service-container" class="landing-page-content">
+                    </div>
+                </a>
+            </section>
+        </main>
+    <!-- Footer -->
+        <%- include('partials/footer') %>
+</body>
+</html>

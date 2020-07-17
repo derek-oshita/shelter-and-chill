@@ -1,0 +1,612 @@
+/* Universal */
+* {
+    font-family: 'Source Code Pro', monospace;
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body {
+    background-color: #abe9cd;
+    background-image: linear-gradient(315deg, #abe9cd 0%, #3eadcf 74%);   
+    background-repeat: no-repeat;
+    background-size: cover; 
+}
+
+#logo {
+    color: white; 
+    margin: 0px 0px 0px 15px; 
+}
+
+#logo-container {
+    width: 50vw; 
+    display: flex; 
+    justify-content: flex-start; 
+    align-items: center;
+}
+
+/* -----------------MAIN BUTTONS------------------- */
+.movie-show-btn{
+    margin: 10px 0px 10px 12px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-color: white;
+    color: white;
+    background-color: #40515E;
+}
+
+.show-show-btn{
+    margin: 10px 0px 10px 12px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-color: white;
+    color: white;
+    background-color: #40515E;
+}
+
+.main-btn{
+    margin: 10px 0px 10px 12px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-color: white;
+    color: white;
+    background-color: #40515E;
+}
+
+.btn-group {
+    margin: 0px 15px 0px 0px; 
+}
+
+.menu-item {
+    text-align: center;
+}
+
+/* Unordered List */
+ul {
+    list-style-type: none;
+    text-decoration: none;
+}
+
+/* Anchor Tags */
+a {
+    cursor: pointer;
+}
+
+a:link {
+    color: white; 
+}
+
+/* LI */
+li {
+    text-decoration: none; 
+    color: black; 
+}
+/* -----------------CARDS------------------- */
+
+.card {
+    width: 345px;
+    height: 230px;
+    display: inline-block;   
+}
+
+/* Index page for movies/shows */
+
+#catch-phrase-container-partial {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    height: 20vh; 
+    width: 100vw; 
+}
+
+#catch-phrase-partial {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 75px; 
+    color: white; 
+}
+
+/* -----------------Show page for movies------------------- */
+/* Image */
+
+#show-movie-image-container {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    /* Image found on pinterest: https://www.pinterest.com/pin/430023464396519373/ */
+    /* background-image: url("https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-0/p640x640/108210711_3315306321842301_3135188879402337733_o.jpg?_nc_cat=104&_nc_sid=e007fa&_nc_ohc=FSX0wa9UjhcAX-xUdx4&_nc_ht=scontent-sjc3-1.xx&_nc_tp=6&oh=eb32fc52b968b01c259b17b072d136e5&oe=5F328260");  */
+    background-image: url(/images/curtains_1.jpg); 
+    background-size: cover;
+    height: 45vh; 
+}
+
+#show-movie-image {
+    width: 38vw; 
+    height: 35vh;
+    display: inline-block; 
+    /* border: 2px solid #323232;  */
+    border: 2px solid white; 
+}
+
+/* Like / Dislike Buttons */
+
+#show-movie-button-container {
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    border: 1px solid #323232; 
+    /* gradient by uiGradients */
+    background-color: #40515E;
+    height: 4vh; 
+}
+
+.counters {
+    width: 20vw; 
+    height: 4vh; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+/* Movie Details */
+
+#movie-details-container {
+    display: flex; 
+    justify-content: space-around;
+    align-items: center; 
+    height: 27vh; 
+}
+
+#movie-details, #synopsis {
+    width: 50vw; 
+    height: 27vh; 
+    border: 2px solid #323232; 
+    text-align: center; 
+    padding: 25px 0 10vh 0; 
+}
+
+/* Streaming Services */
+
+.streaming-services {
+    display: flex; 
+    justify-content: center;
+    height: 6vh; 
+}
+
+.streaming-services-list {
+    text-decoration: none;
+}
+
+/* Edit / Delete Button */
+
+#edit-delete-button-container {
+    display: flex; 
+    justify-content: center;
+}
+
+/* -----------------Show page for Shows------------------- */
+
+/* Image */
+
+#show-show-image-container {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    /* Image found on pinterest: https://www.pinterest.com/pin/430023464396519373/ */
+    /* background-image: url("https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-0/p640x640/108210711_3315306321842301_3135188879402337733_o.jpg?_nc_cat=104&_nc_sid=e007fa&_nc_ohc=FSX0wa9UjhcAX-xUdx4&_nc_ht=scontent-sjc3-1.xx&_nc_tp=6&oh=eb32fc52b968b01c259b17b072d136e5&oe=5F328260");  */
+    background-image: url(/images/curtains_1.jpg); 
+    background-size: cover;
+    height: 45vh; 
+}
+
+#show-show-image {
+    width: 38vw; 
+    height: 35vh;
+    display: inline-block; 
+    border: 2px solid #323232; 
+}
+
+/* Like / Dislike Buttons */
+
+#show-show-button-container {
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    border: 1px solid #323232; 
+    background-color: #40515E;
+    height: 4vh; 
+}
+
+.counters {
+    width: 20vw; 
+    height: 10vh; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+/* Show Details */
+
+#show-details-container {
+    display: flex; 
+    justify-content: space-around;
+    align-items: center; 
+    height: 27vh; 
+}
+
+#show-details, #synopsis {
+    width: 50vw; 
+    height: 27vh; 
+    border: 2px solid #323232; 
+    text-align: center; 
+    padding: 30px 0px 0px 0px; 
+}
+
+/* Streaming Services */
+
+.streaming-services {
+    display: flex; 
+    justify-content: center;
+    height: 6vh; 
+}
+
+.streaming-services-list {
+    text-decoration: none;
+}
+
+/* Edit / Delete Button */
+
+#edit-delete-button-container {
+    display: flex; 
+    justify-content: center;
+}
+
+/* Show page for Services */
+
+/* Image */
+
+#show-service-image-container {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    height: 45vh; 
+    /* background-color: #63a4ff;
+    background-image: linear-gradient(315deg, #63a4ff 0%, #83eaf1 74%); */
+}
+
+#show-service-image {
+    width: 38vw; 
+    height: 35vh;
+    display: inline-block; 
+    border: 2px solid #323232; 
+}
+
+/* Price */
+
+#show-service-price-container {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    height: 15vh; 
+}
+
+#monthly-subscription {
+    color: white; 
+    font-family: 'Source Code Pro', monospace;
+}
+
+/* Edit/Delete Buttons */
+
+#show-service-button-container {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 10vh; 
+}
+
+.buttons {
+    width: 100px; 
+    height: 40px; 
+    font-size: 22px; 
+    font-family: 'Source Code Pro', monospace;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-color: white;
+    color: white;
+    background-color: #40515E;
+}
+
+.divider {
+    width: 2vw; 
+    height: auto; 
+    display: inline-block; 
+}
+
+
+
+/* -----------------FOOTER------------------- */
+
+footer{
+    /* position: fixed; */
+    bottom: 0;
+    text-align: center;
+    /* font-size: 15px; */
+    min-height: 40px;
+    height: 5vh;
+    /* Gradient by Eggradients */
+    background-color: #abe9cd;
+    background-image: linear-gradient(315deg, #abe9cd 0%, #3eadcf 74%);    
+    width: 100vw;
+}
+
+footer div {
+    position: relative;
+    text-align: center;
+    color: rgb(1, 22, 39);
+    min-height: 15px;
+    line-height: 5vh;
+    font-weight: bold;
+    font-size: medium;
+}
+
+/* -----------------HEADER------------------- */
+
+nav.navbar {
+    background-color: rgb(64, 81, 93);
+}
+
+.nav-link {
+    color: rgb(150, 226, 217);
+}
+
+.nav-link:hover {
+    color: white; 
+}
+
+.navbar-brand{
+    color: rgb(150, 226, 217);
+}
+/* -----------------NEW FORM------------------- */
+.red-button {
+    
+    background-color: #e71d36;
+    margin-bottom: 15px;
+    border-color: white;
+}
+
+.movie-new-container{
+    height: 85vh;
+}
+
+.show-new-container{
+    height: 85vh;
+}
+
+.service-new-container{
+    height: 85vh;
+}
+
+/* -----------------EDIT FORM------------------- */
+.movie-edit-container{
+    height: 85vh;
+}
+
+.show-edit-container{
+    height: 85vh;
+}
+
+.service-edit-container{
+    height: 85vh;
+}
+
+
+
+
+/* -----------------ADD FAVS------------------- */
+
+.add-buttons-container{
+    height: 80vh;
+    width: 100%;
+}
+
+.add-buttons {
+    align-items: center;
+    width: 100vw;
+}
+
+.add {
+    height: 50px;
+    width: 60vw;
+    margin: 20px;
+    display: block;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    align-items: center;
+    border-color: white;
+    color: white;
+}
+
+.add-movie {
+    background-color: #40515E;
+}
+
+.add-show {
+    background-color: #96E2D9;
+}
+
+.add-service {
+    background-color: #40AECF;
+}
+
+/* -----------------ABOUT------------------- */
+.card-container{
+    width: 100vw;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.about-card {
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.5);
+    max-width: 380px;
+    min-width: 250px;
+    margin: 3vh 25px 4vh ;
+    text-align: center;
+    background-size: cover;
+  }
+  
+  .title {
+    font-size: 25px;
+    text-decoration: underline; 
+  }
+  
+  p button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+  }
+  
+  .about-card a {
+    text-decoration: none;
+    font-size: 22px;
+    color: black;
+  }
+  
+  button:hover, a:hover {
+    opacity: 0.7;
+  }
+#footer-text {
+    color: white; 
+}
+
+/* ----------------- Carousel ------------------- */
+
+#carousel-container {
+    height: 70vh;
+}
+
+/* Swipe Left / Right */
+
+#carouselExampleControls {
+    height: 70vh; 
+}
+
+.carousel-control-next {
+    width: 3vw; 
+}
+
+.carousel-control-next-icon {
+    height: 10vh; 
+    width: 10vw; 
+    margin: 200px 0 0 0; 
+}
+
+.carousel-control-prev {
+    width: 3vw; 
+}
+
+.carousel-control-prev-icon {
+    height: 10vh; 
+    width: 10vw; 
+    margin: 200px 0 0 0; 
+}
+
+
+.carousel-inner {
+    height: 100vh; 
+}
+
+.carousel-inner {
+    height: 70vh;
+}
+
+/* First Card */
+
+#first-slide-container {
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+}
+
+/* Big Grey Box  */
+
+.carousel-item {
+    height: 100%;
+    padding: 1px;
+    background-color: #40515D;
+    height: 70vh; 
+    justify-content: center;
+}
+
+/* First Slide */
+#first-slide {
+    height: 45vh; 
+    width: 60vw; 
+    border: 2px solid white; 
+}
+
+#first-image-container {
+    background: white;
+    /* display: inline-block; */
+    display: flex; 
+    justify-content: center; 
+    height: 70vh; 
+    background-color: #40515D;
+
+}
+
+.c-item-row {
+    padding: 25px;
+}
+
+/* Subsequent Slides - Created Movies/Shows */
+
+/* Container for card */
+.carousel-card {
+    /* height: 30vh; 
+    width: 50vh;  */
+    /* This will show the blue behind the movies */
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+}
+
+#carousel-image {
+    background-size: cover; 
+    height: 30vh; 
+    width: 50vh;
+    border: 2px solid white; 
+    margin: 0px 0px 0px 100px; 
+}
+
+/* ----------------- Add New Button for index pages ------------------- */
+
+#add-new-container {
+    height: 8vh; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+#add-new-button {
+    width: 8vw; 
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-color: white;
+    color: white;
+    background-color: #40515E;
+}

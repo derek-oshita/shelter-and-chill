@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Head -->
+  <%- include('../partials/head', {title: ` ${movie.name}`}) %>
+  <%- include('../partials/head', {title: ' - Movies'}) %>
+  <!-- Header -->
+  <body>
+    <%- include('../partials/header') %>
+    <!-- Movie Poster -->
+      <main>
+      <div id="show-movie-image-container">
+        <img id="show-movie-image" src="<%=movie.imgUrl%>">
+      </div>
+      <!-- Buttons for voting (further development) -->
+      <div id="show-movie-button-container">
+      </div>
+      <!-- Movie Details -->
+      <div id="movie-details-container">
+        <!-- Genre, Cast, Director -->
+        <div id="movie-details">
+          <p class="title" class="animate__animated animate__fadeInDown"><%= movie.name %></p>
+          <p><%= (`Genre: ${movie.genre}`) %></p>
+          <p><%= (`Cast: ${movie.cast}`) %></p>
+          <p><%= (`Director: ${movie.director}`) %></p>
+        </div>
+        <!-- Synopsis -->
+        <div id="synopsis">
+          <%= (`Synopsis: ${movie.synopsis}`) %>
+        </div>
+      </div>
+        <!-- Movie Streaming Services -->
+        <div class="streaming-services"> 
+          <span>
+            Available On: 
+          </span>
+          <div class="divider">
+          </div>
+            <% movie.service.forEach((service) => { %>
+            <ul class="streaming-services-list">
+              <a href="/services/<%=service.id%>"><li ><%= service.name %></li></a>
+            </ul>  
+            <div class="divider">
+            </div>
+            <% }) %>
+        </div>
+        <!-- Edit Button -->
+        <div id="edit-delete-button-container">
+          <a href="/movies/<%= movie._id %>/edit">
+            <button class="movie-show-btn">Edit Movie</button>
+          </a>
+          <!-- Divider -->
+          <div class="divider">
+          </div>
+          <!-- Delete Button -->
+          <form  style="display: inline;" action="/movies/<%= movie._id%>?_method=DELETE" method="POST">
+            <button class="movie-show-btn" type="submit">Delete Movie</button>
+          </form>
+        </div>
+
+      </div>
+    </main>
+    <!-- Footer -->
+    <%- include('../partials/footer') %>
+  </body>
+</html>

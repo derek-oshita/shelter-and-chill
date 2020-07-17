@@ -1,0 +1,17 @@
+<div class="carousel-item">
+    <div class="row row-cols-1 row-cols-md-3 align-items-center c-item1 c-item-row">
+        <% for(a = 0; a<services6.length; a++) { %>
+            <div class="col mb-4">
+              <!-- image frames -->
+                <div class="carousel-card" >
+                  <a href="/services/<%=services6[a].id%>">
+                    <img id="carousel-image" src="<%= services6[a].imgUrl %> " alt="Chill-Services: <%= services6[a].name %>">
+                    </a>
+                    <div class="card-body" >
+                  </div>
+                </div>
+              </div>
+        <% }; %>
+
+    </div>
+  </div>

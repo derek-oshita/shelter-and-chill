@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('../partials/head', {title: ' - New Movie'}) %>
+    <link rel="stylesheet" href="/styles/style.css"> 
+
+  <body>
+    <%- include('../partials/header') %>
+    <div class="service-new-container">
+      <form action="/services" method="POST">
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Streaming Service Name"/>
+          </div>
+        </div>
+  
+        <div class="form-row">
+          <div class="form-group col-md-6" >
+            <label for="price">Monthly Subscription:</label>
+            <input type="text" class="form-control" id="price" name="price" placeholder="Price rounded to whole number"/>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="imgUrl">Image Url:</label>
+            <input type="text" class="form-control" id="imgUrl" name="imgUrl" placeholder="Image URL "/>
+          </div>
+        </div>
+   
+          <button type="submit" class="btn btn-primary red-button">Save</button>
+      </form>
+    </div>
+
+    <%- include('../partials/footer') %>
+  </body>
+</html>

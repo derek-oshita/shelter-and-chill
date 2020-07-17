@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Head -->
+  <%- include('../partials/head', {title: ` - ${show.name}`}) %>
+
+  <!-- Header -->
+  <body>
+    <%- include('../partials/header') %>
+
+    <!-- Show Poster -->
+      <main>
+      <div id="show-show-image-container">
+        <img id="show-show-image" src="<%=show.imgUrl%>">
+      </div>
+      <!-- Buttons for voting (further development) -->
+      <div id="show-show-button-container">
+      </div>
+      <!-- Show Details -->
+      <div id="show-details-container">
+        <!-- Genre, Cast, Director -->
+        <div id="show-details">
+          <p class="title"><%= show.name %></p>
+          <p><%= (`Genre: ${show.genre}`) %></p>
+          <p><%= (`Cast: ${show.cast}`) %></p>
+          <p><%= (`Director: ${show.director}`) %></p>
+        </div>
+        <!-- Synopsis -->
+        <div id="synopsis">
+          <%= (`Synopsis: ${show.synopsis}`) %>
+        </div>
+      </div>
+        <!-- Show Streaming Services -->
+        <div class="streaming-services"> 
+          <span>
+            Available On: 
+          </span>
+          <div class="divider">
+          </div>
+            <% show.service.forEach((service) => { %>
+            <ul class="streaming-services-list">
+              <a href="/services/<%=service.id%>"><li><%= service.name %></li></a>
+            </ul>  
+                <div class="divider">
+                </div>
+            <% }) %>
+        </div>
+        <!-- Edit Button -->
+        <div id="edit-delete-button-container">
+          <a href="/shows/<%= show._id %>/edit">
+            <button class="show-show-btn">Edit Show</button>
+          </a>
+          <!-- Divider -->
+          <div class="divider">
+          </div>
+          <!-- Delete Button -->
+          <form style="display: inline;" action="/shows/<%= show._id%>?_method=DELETE" method="POST">
+            <button class="show-show-btn" type="submit">Delete Show</button>
+          </form>
+        </div>
+      </div>
+    </main>
+    <!-- Footer -->
+    <%- include('../partials/footer') %>
+  </body>
+</html>

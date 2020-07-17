@@ -4,23 +4,12 @@
 const movieLikes = $('.counters1'); 
 const movieDislikes = $('#movie-dislikes'); 
 
-// Show Button
+// Show Buttons
 const showLikes = $('#show-likes'); 
 const showDislikes = $('#show-dislikes'); 
 
-// Model
-
-// upVote: {
-//     type: Number, 
-//     default: 0
-// }, 
-// downVote: {
-//     type: Number,
-//     default: 0
-// }, 
 
 // Functions
-
 
 // Get All Movies
 function handleLike (event) {
@@ -30,16 +19,25 @@ function handleLike (event) {
     .then((data) => console.log(data)); 
 }; 
 
-function likeMovie (movie) {
-    movie.upVote++; 
+// Get A Movie UpVote value
+function getMovieUpVote (event) {
+    console.log('upVote value: ', event.target.id)
+    // let movieId = event.target.id;
+    // movieId++; 
+    // fetch(`/movies/${movieId}`, {
+    //     method: 'PUT',
+    // })
+    // .then((stream) => {stream.json()})
+    // .then((res) => console.log(res))
 }
 
-// Get A Movie
-function getMovie (event) {
-    console.log('movie clicked: ', event.target.id)
-    const movieId = event.target.id; 
+// UpVote Movie
+
+function likeMovie (event) {
+    let movieUpVote = event.target.id;
+    movieUpVote++; 
+    fetch(`/movies/${movieUpVote}`) 
+
 }
 
-// Event Listener
-
-$(movieLikes).on('click', getMovie); 
+$(movieLikes).on('click', likeMovie); 

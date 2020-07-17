@@ -3,10 +3,10 @@ const db = require('../models');
 const router = express.Router(); 
 
 
+//CURRENT PATH = '/services'
 //--------------------------/ROUTES/--------------------------//
-// *****Current path = '/services'*****
 
-//#*#*#*#*#* SERVICE INDEX *#*#*#*#*#
+//**********SERVICE INDEX**********
 router.get('/', (req, res) => {
     db.Service.find({}, (err, allServices) => {
         if (err) return console.log(err); 
@@ -16,12 +16,12 @@ router.get('/', (req, res) => {
     })
 }); 
 
-//#*#*#*#*#* NEW SERVICE  *#*#*#*#*#
+//**********NEW SERVICE**********
 router.get('/new', (req, res) => {
     res.render('service/new')
 }); 
 
-//#*#*#*#*#* CREATE SERVICE *#*#*#*#*#
+//**********CREATE SERVICE **********
 router.post('/', (req, res) =>{
     console.log('Request body =', req.body);
     db.Service.create(req.body, (err, newService) => {
@@ -31,7 +31,7 @@ router.post('/', (req, res) =>{
     })
 });
 
-//#*#*#*#*#* SERVICE SHOW *#*#*#*#*#
+//**********SERVICE SHOW **********
 router.get('/:id', (req, res) => {
     db.Service.findById(req.params.id, (err, service) => {
         console.log(service)
@@ -42,7 +42,7 @@ router.get('/:id', (req, res) => {
     })
 });
 
-//#*#*#*#*#* EDIT SERVICE *#*#*#*#*#
+//**********EDIT SERVICE**********
 router.get('/:id/edit', (req, res) => {
     db.Service.findById(req.params.id, (err, foundService) => {
         if (err) return console.log(err);
@@ -52,7 +52,7 @@ router.get('/:id/edit', (req, res) => {
     })
 });
 
-//#*#*#*#*#* UPDATE SERVICE *#*#*#*#*#
+//**********UPDATE SERVICE**********
 router.put('/:id', (req, res) => {
     console.log('service to update =', req.body);
     db.Service.findByIdAndUpdate(
@@ -66,7 +66,7 @@ router.put('/:id', (req, res) => {
     )
 });
 
-//#*#*#*#*#* DELETE SERVICE *#*#*#*#*#
+//**********DELETE SERVICE**********
 router.delete('/:id', (req, res) => {
     db.Service.findByIdAndDelete(req.params.id, (err, service) => {
         console.log(service)

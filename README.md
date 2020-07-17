@@ -47,7 +47,7 @@ https://www.shelterAndChill.com
 
 https://www.figma.com/proto/Xt6sAga0HibD1OUEppbyTp/Untitled?node-id=6%3A211&scaling=min-zoom
 
-![Wireframes](./assets/wireframe.png)
+![Wireframes](./assets/wireframe.jpg)
 
 
 ## User Stories

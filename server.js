@@ -17,6 +17,9 @@ const showCtrl = require('./controllers/showController');
 // API
 const apiCtrl = require('./controllers/apiController')
 
+// Auth
+const authCtrl = require('./controllers/authController')
+
 // --- View Engine --- // 
 app.set('view engine', 'ejs'); 
 
@@ -43,6 +46,8 @@ app.use((req, res, next) => {
 app.get('/', (req, res) => {
     res.render('index')
 }); 
+// Auth 
+app.use('/', authCtrl); 
 // About us 
 app.get('/about', (req, res) => {
     res.render('about/index')
@@ -57,8 +62,7 @@ app.use('/movies', movieCtrl);
 app.use('/services', serviceCtrl); 
 // Show 
 app.use('/shows', showCtrl); 
-// API 
-app.use('/api/v1', apiCtrl); 
+
 
 // 404 Not Found
 app.get('*', (req, res) => {

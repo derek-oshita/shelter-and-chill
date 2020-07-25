@@ -1,5 +1,5 @@
 const mongoose = require('mongoose'); 
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/shelter-and-chill'
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/shelter-and-chill';
 
 // Connect to MongoDB
 mongoose.connect(MONGODB_URI, {
@@ -15,5 +15,6 @@ mongoose.connect(MONGODB_URI, {
 module.exports = {
     Movie: require('./Movie'), 
     Show: require('./Show'), 
-    Service: require('./Service')
+    Service: require('./Service'), 
+    User: require('./User')
 }; 

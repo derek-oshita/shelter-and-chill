@@ -1,4 +1,7 @@
-/* Universal */
+/********************************************************************************************************************************* 
+Universal 
+*/
+
 * {
     font-family: 'Source Code Pro', monospace;
     margin: 0; 
@@ -25,7 +28,10 @@ body {
     align-items: center;
 }
 
-/* -----------------MAIN BUTTONS------------------- */
+/********************************************************************************************************************************* 
+Main Buttons
+*/
+
 .movie-show-btn{
     margin: 10px 0px 10px 12px;
     padding-left: 5px;
@@ -87,7 +93,11 @@ li {
     text-decoration: none; 
     color: black; 
 }
-/* -----------------CARDS------------------- */
+
+/********************************************************************************************************************************* 
+Cards 
+*/
+
 
 .card {
     width: 345px;
@@ -111,7 +121,10 @@ li {
     color: white; 
 }
 
-/* -----------------Show page for movies------------------- */
+/********************************************************************************************************************************* 
+Movie - show page
+*/
+
 /* Image */
 
 #show-movie-image-container {
@@ -189,7 +202,9 @@ li {
     justify-content: center;
 }
 
-/* -----------------Show page for Shows------------------- */
+/********************************************************************************************************************************* 
+Show - show page
+*/
 
 /* Image */
 
@@ -266,7 +281,9 @@ li {
     justify-content: center;
 }
 
-/* Show page for Services */
+/********************************************************************************************************************************* 
+Services - show page
+*/
 
 /* Image */
 
@@ -328,21 +345,22 @@ li {
     display: inline-block; 
 }
 
-
-
-/* -----------------FOOTER------------------- */
+/********************************************************************************************************************************* 
+Footer
+*/
 
 footer{
     /* position: fixed; */
     bottom: 0;
     text-align: center;
     /* font-size: 15px; */
-    min-height: 40px;
-    height: 5vh;
+    /* min-height: 40px; */
+    /* height: 5vh; */
     /* Gradient by Eggradients */
     background-color: #abe9cd;
     background-image: linear-gradient(315deg, #abe9cd 0%, #3eadcf 74%);    
     width: 100vw;
+    padding: 2% 5%; 
 }
 
 footer div {
@@ -355,7 +373,9 @@ footer div {
     font-size: medium;
 }
 
-/* -----------------HEADER------------------- */
+/********************************************************************************************************************************* 
+Header
+*/
 
 nav.navbar {
     background-color: rgb(64, 81, 93);
@@ -392,7 +412,10 @@ nav.navbar {
     height: 85vh;
 }
 
-/* -----------------EDIT FORM------------------- */
+/********************************************************************************************************************************* 
+Edit Form 
+*/
+
 .movie-edit-container{
     height: 85vh;
 }
@@ -405,10 +428,9 @@ nav.navbar {
     height: 85vh;
 }
 
-
-
-
-/* -----------------ADD FAVS------------------- */
+/********************************************************************************************************************************* 
+Add Your Favorites 
+*/
 
 .add-buttons-container{
     height: 80vh;
@@ -444,7 +466,10 @@ nav.navbar {
     background-color: #40AECF;
 }
 
-/* -----------------ABOUT------------------- */
+/********************************************************************************************************************************* 
+About 
+*/
+
 .card-container{
     width: 100vw;
     align-items: center;
@@ -492,7 +517,9 @@ nav.navbar {
     color: white; 
 }
 
-/* ----------------- Carousel ------------------- */
+/********************************************************************************************************************************* 
+Carousel
+*/
 
 #carousel-container {
     height: 70vh;
@@ -572,9 +599,10 @@ nav.navbar {
     padding: 25px;
 }
 
-/* Subsequent Slides - Created Movies/Shows */
+/********************************************************************************************************************************* 
+Subsequent Carousel Cards 
+*/
 
-/* Container for card */
 .carousel-card {
     /* height: 30vh; 
     width: 50vh;  */
@@ -592,10 +620,13 @@ nav.navbar {
     margin: 0px 0px 0px 100px; 
 }
 
-/* ----------------- Add New Button for index pages ------------------- */
+
+/********************************************************************************************************************************* 
+Add New Button 
+*/
 
 #add-new-container {
-    height: 8vh; 
+    height: 12vh; 
     display: flex; 
     justify-content: center;
     align-items: center;
@@ -610,3 +641,40 @@ nav.navbar {
     color: white;
     background-color: #40515E;
 }
+
+
+/********************************************************************************************************************************* 
+User Profile 
+*/
+
+.suggestions-container {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+.suggestions-movies-container {
+    text-align: center;
+}
+
+.suggestions-shows-container {
+    text-align: center;
+}
+
+.browse-movies-image {
+    height: 50vh; 
+    width: 45vw; 
+    border: 2px solid white; 
+}
+
+.browse-shows-image {
+    height: 50vh; 
+    width: 45vw; 
+    border: 2px solid white; 
+}
+
+h3 {
+    color: white; 
+}
+
+

@@ -8,6 +8,7 @@ const router = express.Router();
 
 // *********All Movies********** 
 router.get('/', (req, res) => {
+    console.log('Request session: ', req.session); 
     db.Movie.find({}, (err, allMovies) => {
         if (err) return console.log(err); 
         console.log(allMovies)

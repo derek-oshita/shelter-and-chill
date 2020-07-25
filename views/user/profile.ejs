@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head -->
+<%- include('../partials/head') %>
+<link rel="stylesheet" href="styles/style.css" >
+<!-- Body -->
+<body id="landing-page-body">
+    <!-- Header -->
+        <%- include('../partials/header') %>
+    <!-- Welcome message -->
+        <section id="catch-phrase-container-partial">
+            <h2 id="catch-phrase-partial" class="animate__animated animate__fadeIn">
+                Welcome, <%= user.name %>!
+            </h2>
+        </section>
+    <!-- Suggestions -->
+    <div class="suggestions-container">
+        <!-- Movies -->
+        <div class="suggestions-movies-container">
+            <div class="suggestions-movies">
+                <a href="/movies">
+                <h3>Browse Movies</h3>
+                </a>
+                <br>
+                <a href="/movies">
+                <img src="/images/movie_collection.jpg" alt="Movie Collection" class="browse-movies-image">
+                </a>
+            </div>
+        </div>
+        <!-- Divider -->
+        <div class="divider">
+        </div>
+        <!-- Shows -->
+        <div class="suggestions-shows-container">
+            <div class="suggestions-shows">
+                <a href="/shows">
+                <h3>Browse Shows</h3>
+                </a>
+                <br>
+                <a href="/shows">
+                <img src="/images/shows_list.jpg" alt="Show Collection" class="browse-shows-image">
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Add New Button -->
+    <section id="add-new-container">
+        <a href="/add">
+          <button id="add-new-button">Add Your Favorites</button>
+        </a>
+      </section>
+    </div>
+    <!-- Logout -->
+    <section id="add-new-container">
+        <a href="/logout">
+          <button id="add-new-button">Logout</button>
+        </a>
+      </section>
+    </div>
+    <!-- Footer -->
+        <%- include('../partials/footer') %>
+</body>

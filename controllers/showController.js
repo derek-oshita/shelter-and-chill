@@ -8,6 +8,7 @@ const router = express.Router();
 
 // **********All Shows********** 
 router.get('/', (req, res) => {
+    console.log('Request session: ', req.session); 
     db.Show.find({}, (err, allShows) => {
         if (err) return console.log(err); 
         console.log(allShows);

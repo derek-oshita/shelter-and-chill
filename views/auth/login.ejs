@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head -->
+<%- include('../partials/head') %>
+<link rel="stylesheet" href="styles/main.css" >
+<!-- Body -->
+<body id="landing-page-body">
+    <!-- Header -->
+        <%- include('../partials/header') %>
+    <!-- Main Section -->
+        <main>
+            <!-- Catch Phrase Container -->
+            <section id="catch-phrase-container">
+                <h2 id="catch-phrase" class="animate__animated animate__fadeIn">
+                    Login & chill...
+                </h2>
+            </section>
+            <!-- Login -->
+            <div class="login-container">
+                <div class="row">
+                    <!-- column, med-sized screen, 1/4... off-set 4 on each side for 12 -->
+                    <div class="col-md-4 offset-md-4">
+                        <!-- Form -->
+                        <div class="form-container">
+                        <form action="/login" method="POST">
+                            <!-- Email -->
+                            <div class="form-group">
+                                <label for="email">
+                                    Email
+                                </label>
+                                <input type="email" name="email" class="form-control" id="email">
+                            </div>
+                            <!-- Password -->
+                            <div class="form-group">
+                                <label for="password">
+                                    Password
+                                </label>
+                                <input type="password" name="password" class="form-control" id="password">
+                            </div>
+                            <!-- Register -->
+                            <a href="/register">
+                            <button type="submit" class="btn btn-primary float-left">
+                                Register
+                            </button>
+                            </a>
+                            <!-- Login -->
+                            <button type="submit" class="btn btn-primary float-right">
+                                Login
+                            </button>
+                        </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    <!-- Footer -->
+        <%- include('../partials/footer') %>
+</body>
+</html>

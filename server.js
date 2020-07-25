@@ -1,7 +1,9 @@
 const express = require('express'); 
 const app = express(); 
 const methodOverride = require('method-override'); 
-const PORT = process.env.PORT || 4000; 
+require('dotenv').config(); 
+const PORT = process.env.PORT || 3000; 
+const session = require('express-session'); 
 
 // --- Controllers --- // 
 
@@ -16,6 +18,12 @@ const showCtrl = require('./controllers/showController');
 
 // API
 const apiCtrl = require('./controllers/apiController')
+
+// Auth
+const authCtrl = require('./controllers/authController')
+
+// User Profile 
+const userCtrl = require('./controllers/userController')
 
 // --- View Engine --- // 
 app.set('view engine', 'ejs'); 
@@ -37,12 +45,30 @@ app.use((req, res, next) => {
     next(); 
 }); 
 
+// Express Session 
+app.use(session ({
+    secret: process.env.SESSION_SECRET, 
+    resave: false, 
+    saveUninitialized: false, 
+    cookie: {
+        maxAge: 1000 * 60 * 60 * 24 
+    }
+}));
+
+// Must be logged in to access
+app.use((req, res, next) => {
+    if (req.url !== '/login' && req.url !== '/register' && req.url !== '/' && !req.session.currentUser) return res.redirect('/login'); 
+    next(); 
+});
+
 //--------------------------/ROUTES/--------------------------//
 
 // Home 
 app.get('/', (req, res) => {
     res.render('index')
 }); 
+// Auth 
+app.use('/', authCtrl); 
 // About us 
 app.get('/about', (req, res) => {
     res.render('about/index')
@@ -57,8 +83,9 @@ app.use('/movies', movieCtrl);
 app.use('/services', serviceCtrl); 
 // Show 
 app.use('/shows', showCtrl); 
-// API 
-app.use('/api/v1', apiCtrl); 
+// User 
+app.use('/profile', userCtrl)
+
 
 // 404 Not Found
 app.get('*', (req, res) => {
@@ -67,3 +94,4 @@ app.get('*', (req, res) => {
 
 // --- Server Listener --- // 
 app.listen(PORT, () => {console.log(`Server is listening on ${PORT}...`)})
+// app.listen(process.env.PORT || 3000); 

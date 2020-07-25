@@ -89,5 +89,15 @@ router.post('/register', (req, res) => {
   });
 })
 
+// Logout
+router.get('/logout', (req, res) => {
+  if (!req.session.currentUser) return res.send('You must be logged in to logout... duh...')
+  req.session.destroy((err) => {
+    if (err) return console.log(err)
+    res.redirect('/login')
+  })
+}); 
+
+
 // --- Router --- //
 module.exports = router; 

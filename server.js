@@ -22,6 +22,9 @@ const apiCtrl = require('./controllers/apiController')
 // Auth
 const authCtrl = require('./controllers/authController')
 
+// User Profile 
+const userCtrl = require('./controllers/userController')
+
 // --- View Engine --- // 
 app.set('view engine', 'ejs'); 
 
@@ -80,6 +83,8 @@ app.use('/movies', movieCtrl);
 app.use('/services', serviceCtrl); 
 // Show 
 app.use('/shows', showCtrl); 
+// User 
+app.use('/profile', userCtrl)
 
 
 // 404 Not Found

@@ -1,7 +1,9 @@
 const express = require('express'); 
 const app = express(); 
 const methodOverride = require('method-override'); 
+require('dotenv').config(); 
 const PORT = process.env.PORT || 3000; 
+const session = require('express-session'); 
 
 // --- Controllers --- // 
 
@@ -39,6 +41,22 @@ app.use((req, res, next) => {
     console.log(`${req.method} ${req.url} ${new Date().toLocaleTimeString()}`); 
     next(); 
 }); 
+
+// Express Session 
+app.use(session ({
+    secret: process.env.SESSION_SECRET, 
+    resave: false, 
+    saveUninitialized: false, 
+    cookie: {
+        maxAge: 1000 * 60 * 60 * 24 
+    }
+}));
+
+// Must be logged in to access
+app.use((req, res, next) => {
+    if (req.url !== '/login' && req.url !== '/register' && req.url !== '/' && !req.session.currentUser) return res.redirect('/login'); 
+    next(); 
+});
 
 //--------------------------/ROUTES/--------------------------//
 

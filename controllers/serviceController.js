@@ -8,6 +8,7 @@ const router = express.Router();
 
 //**********SERVICE INDEX**********
 router.get('/', (req, res) => {
+    console.log('Request session: ', req.session); 
     db.Service.find({}, (err, allServices) => {
         if (err) return console.log(err); 
         res.render('service/index', {
@@ -18,6 +19,9 @@ router.get('/', (req, res) => {
 
 //**********NEW SERVICE**********
 router.get('/new', (req, res) => {
+    console.log('Req session = ', req.session); 
+    // security session here
+    if (!req.session.currentUser) return res.redirect('/login')
     res.render('service/new')
 }); 
 

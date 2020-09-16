@@ -1,6 +1,6 @@
 # Shelter and Chill
-Unit Two Full Stack Project
 
+- https://floating-lowlands-00662.herokuapp.com/
 
 ## Index:
 
@@ -11,16 +11,9 @@ Unit Two Full Stack Project
 - [User Stories](#User-Stories)
 - [Thanks](#Special-Thanks)
 
-
 ## Overview
 
 Have you ever wanted to watch something but didn't know where to find it, what you actually wanted to watch, or what you can watch with the services you are already subscribed to? Well my friends you are in luck! **Shelter & Chill** was made to assist people who are just as lost as you!
-
-
-## Link to page
-
-https://floating-lowlands-00662.herokuapp.com/
-
 
 ## Technologies & Libraries Used
 
@@ -42,13 +35,11 @@ https://floating-lowlands-00662.herokuapp.com/
 
 ![ERD](./assets/ERD.jpeg)
 
-
 ## Wireframes
 
 https://www.figma.com/proto/Xt6sAga0HibD1OUEppbyTp/Untitled?node-id=6%3A211&scaling=min-zoom
 
 ![Wireframes](./assets/wireframe.jpg)
-
 
 ## User Stories
 
@@ -66,14 +57,12 @@ For the create page, a form will be available where the user can enter their own
 
 ## Planned Features
 
-
 * Up vote and Down vote Feature
 * Search Feature
 * User Comments
 * API call to http://www.omdbapi.com/ **Open movie Data Base**
 
 ## Special Thanks
-
 
 * Jimmy
 * Zach
@@ -84,7 +73,7 @@ For the create page, a form will be available where the user can enter their own
 * Tony
 * Melisa
 * Allison & Dani
-* Kevin Bacon
+
 
 
 
